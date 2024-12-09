@@ -1,14 +1,71 @@
-# static double teaspoonsToTablespoons(double teaspoons) Returns number of TBSPs from TSP, 1 tablespoon = 3 teaspoons
-def teaspoonsToTablespoons(teaspoons : float = None):
-# static double tablespoonsToTeaspoons(double tablespoons) Returns number of TSPs from TBSP, 1 tablespoon = 3 teaspoons
-    pass;
+import math as Math
+import sys 
+from os.path import dirname, abspath
 
+from flask import request
+dir = dirname(dirname(abspath(__file__)))
+print("absolute path === ",dir)
+
+sys.path.append(dir)
+from app import *  
+
+# static double teaspoonsToTablespoons(double teaspoons) Returns number of TBSPs from TSP, 1 tablespoon = 3 teaspoons
+
+@app.route('/cooking/teaspoonsToTablespoons')
+def teaspoonsToTablespoons(teaspoons : float = None):
+
+    try:
+        tablespoons : float;
+        teaspoons_string = request.args.get('teaspoons');
+        if (teaspoons is not None):
+            tablespoons = round(teaspoons / 3,2);
+            return str(tablespoons);       
+        elif ( teaspoons_string is not None ):
+            teaspoons = float(teaspoons_string);
+            tablespoons = round(teaspoons / 3,2);
+            return str(tablespoons);
+        else : 
+            return None;
+    except Exception as e:
+        print(e)
+        return "Invalid data in query string", 400
+    
+@app.route('/cooking/tablespoonsToTeaspoons')
 def tablespoonsToTeaspoons(tablespoons : float = None):
-    pass;
-# static double tablespoonsToCups(double tablespoons) Returns number of CUPs from TBSP, 1 cup = 16 tablespoons
+    try:
+        teaspoons : float;
+        tablespoons_string = request.args.get('tablespoons');
+        if (tablespoons is not None):
+            teaspoons = round(tablespoons * 3,2);
+            return str(teaspoons);       
+        elif ( tablespoons_string is not None ):
+            tablespoons = float(tablespoons_string);
+            teaspoons = round(tablespoons * 3,2);
+            return str(teaspoons);
+        else : 
+            return None;
+    except Exception as e:
+        print(e)
+        return "Invalid data in query string", 400
+
+# static double cupsToTablespoons(double cups) Returns number of TBSPs from CUPs, 1 cup = 16 tablespoons
 
 def tablespoonsToCups(tablespoons : float = None):
-    pass;
+    try:
+        cups : float;
+        teaspoons_string = request.args.get('teaspoons');
+        if (teaspoons is not None):
+            tablespoons = round(teaspoons / 3,2);
+            return str(tablespoons);       
+        elif ( teaspoons_string is not None ):
+            teaspoons = float(teaspoons_string);
+            tablespoons = round(teaspoons / 3,2);
+            return str(tablespoons);
+        else : 
+            return None;
+    except Exception as e:
+        print(e)
+        return "Invalid data in query string", 400
 # static double cupsToTablespoons(double cups) Returns number of TBSPs from CUPs, 1 cup = 16 tablespoons
 
 def cupsToTablespoons(cups : float = None):

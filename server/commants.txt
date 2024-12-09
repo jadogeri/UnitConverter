@@ -1,3 +1,10 @@
 pip freeze -l > requirements.txt 
 
 pip install -r requirements.txt
+
+//create flask and setup virtual environment
+$ mkdir flask-book-api
+$ cd flask-book-api
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install flask
