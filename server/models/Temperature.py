@@ -1,3 +1,14 @@
+import math as Math
+import sys 
+from os.path import dirname, abspath
+
+from flask import request
+dir = dirname(dirname(abspath(__file__)))
+print("absolute path === ",dir)
+
+sys.path.append(dir)
+from app import *  
+
 # static double celsiusToFahrenheit(double celsius) Returns degrees Fahrenheit from degrees Celsius, F= 9 C +32 5
 @app.route('/temperature/celciusToFahrenheit')
 
@@ -123,6 +134,3 @@ def kelvinToCelcius(kelvin : float = None):
         print(e)
         return "Invalid data in query string", 400
     
-
-
-
