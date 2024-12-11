@@ -1,55 +1,17 @@
 
-
-import pytest
 import requests
 import unittest
 import sys
-from pytest_mock import MockFixture
 
 from os.path import dirname, abspath
 dir = dirname(dirname(abspath(__file__)))
-print("path ===",dir)
-
-dir_models = dir +'\\models'
-print(dir_models)
-
 dir_tests = dir +'\\tests';
-
-
-sys.path.append(dir_models)
 sys.path.append(dir_tests)
+sys.path.append(dir)
+from constants import *
+print(base_url)
 
-
-base_url = "http://localhost:5000/api"
-print("calling time........................................................")
-# def test_url():
-#     # Arrange:
-#     seconds = 60
-#     minutes = 60
-#     hour = 24
-#     #Act:
-#     response = make_request()
-#     print("response object ===", response)
-#     #Assertion:
-#     assert response.status_code == 200  # Validation of status code  
-#     data = response.json()  
-#     # Assertion of body response content:  
-#     assert len(data) > 0  
-#     assert data["element_count"] > 0
-
-
-def make_request(val):
-    # response = requests.get(f'{base_url}?api_key={api_key}')
-    response = requests.get(f'{base_url}/time/secondsToMinutes?seconds={val}')
-    print(response.json())
-
-    return response.json()
-
-
-
-# from utils.utils import *
-
-class APITest(unittest.TestCase):
+class CookingTest(unittest.TestCase):
 
    
     def setUp(self):
@@ -57,46 +19,188 @@ class APITest(unittest.TestCase):
         print("SETUP called ...");
         # Arrange 
 
-        self.num1 : int = 60;
-        self.num2 : int = 2;
-        self.num3 : int = 5;
-        self.num4 : int = -3;
+        self.teaspoons = 3.0
+        self.tablespoons = 1.0
+        self.tablespoons2 = 16.0
+        self.cups = 1.0
+        self.cups2 = 2.0
+        self.ounces = 8.0
+        self.pints = 1.0
 
-
-     
     def tearDown(self) :
         print("TEARDOWN called ...");
+        self.teaspoons = 0.0
+        self.tablespoons = 0.0
+        self.tablespoons2 = 0.0
+        self.cups = 0.0
+        self.cups2 = 0.0
+        self.ounces = 0.0
+        self.pints = 0.0
 
-        self.num1 = 60.0;
-        self.num2 = 0;
-        self.num3 = 0;
-        self.num4 = 0;
-
-
-     
-
-    def test_seconds_to_minutes(self):
+    def test_teaspoons_to_tablespoons(self):
         #Act
-        result = make_request(self.num1)
-        print("print statement",result)
-        #Assert
-        self.assertEqual(result, 1.0)
-'''
-    def test_correct_fibonacci(self):
-        #Act
-        result = fibonacci(self.num3)
-        #Assert
-        self.assertEqual(result, 3)
-    
-    def test_is_valid_input(self):
-        #Act
-        result = is_valid_input(self.num4)
-        #Assert
-        self.assertFalse(result);    
+        # result = make_request(self.num1)
 
-'''
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/teaspoonsToTablespoons?teaspoons={self.teaspoons}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 1.0)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
+
+    def test_tablespoons_to_teaspoons_(self):
+        #Act
+        # result = make_request(self.num1)
+
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/tablespoonsToTeaspoons?tablespoons={self.tablespoons}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 3.0)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
+
+    def test_tablespoons_to_cups_(self):
+        #Act
+        # result = make_request(self.num1)
+
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/tablespoonsToCups?tablespoons={self.tablespoons2}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 1.0)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
+
+    def test_cups_to_tablespoons(self):
+        #Act
+        # result = make_request(self.num1)
+
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/cupsToTablespoons?cups={self.cups}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 16.0)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
+
+    def test_ounces_to_cups(self):
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/ouncesToCups?ounces={self.ounces}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 1.0)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
+
+    def test_cups_to_ounces(self):
+        #Act
+        # result = make_request(self.num1)
+
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/cupsToOunces?cups={self.cups}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 8.0)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
+
+    def test_pints_to_cups(self):
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/pintsToCups?pints={self.pints}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 0.5)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
+
+    def test_cups_to_pints(self):
+
+        try:
+            #Act
+            response = requests.get(f'{base_url}/cooking/cupsToPints?cups={self.cups2}')
+
+            if response.status_code == 200:
+                print(response.status_code)
+                result = response.json();
+            #Assert
+                self.assertEqual(result, 4.0)
+            else:
+                print('Error:',response.status_code,response.json())
+                return response
+
+        except requests.exceptions.RequestException as e:
+            print('Error:==', e)
+            return e
 
 
 
 if __name__ == "__main__":
     unittest.main()
+
+
+
