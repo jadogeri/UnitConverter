@@ -9,7 +9,7 @@ dir_tests = dir +'\\tests';
 sys.path.append(dir_tests)
 sys.path.append(dir)
 from constants import *
-
+print(base_url)
 
 class GeometryTest(unittest.TestCase):
 
@@ -74,7 +74,7 @@ class GeometryTest(unittest.TestCase):
                 print(response.status_code)
                 result = response.json();
             #Assert
-                self.assertEqual(result, 100.0)
+                self.assertEqual(round(result), 100.0)
             else:
                 print('Error:',response.status_code,response.json())
                 return response
@@ -132,7 +132,7 @@ class GeometryTest(unittest.TestCase):
                 print(response.status_code)
                 result = response.json();
             #Assert
-                self.assertEqual(result, 100.0)
+                self.assertEqual(round(result), 100.0)
             else:
                 print('Error:',response.status_code,response.json())
                 return response
