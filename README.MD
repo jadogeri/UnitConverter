@@ -1,0 +1,1 @@
+https://medium.com/pythoneers/learning-sqlite3-in-python-basic-crud-operations-2cdad0256dad
