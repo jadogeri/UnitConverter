@@ -1,3 +1,9 @@
+"""
+@author  Joseph Adogeri
+@since   12-DEC-2024
+@version 1.0   
+
+"""
 
 import requests
 import unittest
@@ -42,8 +48,6 @@ class GeometryTest(unittest.TestCase):
         self.side3 = 0
 
     def test_area_of_rectangle(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -63,8 +67,6 @@ class GeometryTest(unittest.TestCase):
             return e
 
     def test_area_of_circle(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -84,8 +86,6 @@ class GeometryTest(unittest.TestCase):
             return e
         
     def test_area_of_triangle(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act

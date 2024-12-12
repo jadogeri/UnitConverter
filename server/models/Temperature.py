@@ -1,3 +1,9 @@
+"""
+@author  Joseph Adogeri
+@since   12-DEC-2024
+@version 1.0   
+
+"""
 import math as Math
 import sys 
 from os.path import dirname, abspath
@@ -10,7 +16,7 @@ sys.path.append(dir)
 from app import *  
 
 # static double celsiusToFahrenheit(double celsius) Returns degrees Fahrenheit from degrees Celsius, F= 9 C +32 5
-@app.route('/temperature/celciusToFahrenheit')
+@app.route('/api/temperature/celciusToFahrenheit')
 
 def celciusToFahrenheit(celcius : float = None):
 
@@ -32,7 +38,7 @@ def celciusToFahrenheit(celcius : float = None):
     
 
 # static double celsiusToKelvin(double celsius) Returns degrees Kelvin from degrees Celsius, K =C +273.15
-@app.route('/temperature/celciusToKelvin')
+@app.route('/api/temperature/celciusToKelvin')
 
 def celciusToKelvin(celcius : float = None):
     try:
@@ -55,7 +61,7 @@ def celciusToKelvin(celcius : float = None):
 
 # static double fahrenheitToCelsius(double fahrenheit) Returns degrees Celsius from degrees Fahrenheit, C= 5 ( F−32) 9
 
-@app.route('/temperature/fahrenheitToCelcius')
+@app.route('/api/temperature/fahrenheitToCelcius')
 def fahrenheitToCelcius(fahrenheit : float = None):
     try:
         celcius : float;
@@ -74,7 +80,7 @@ def fahrenheitToCelcius(fahrenheit : float = None):
         return "Invalid data in query string", 400
 # static double fahrenheitToKelvin(double fahrenheit) Returns degrees Kelvin from degrees Fahrenheit, K= 5 ( F +459.67) 9
 
-@app.route('/temperature/fahrenheitToKelvin')
+@app.route('/api/temperature/fahrenheitToKelvin')
 
 def fahrenheitToKelvin(fahrenheit : float = None):
     try:
@@ -94,7 +100,7 @@ def fahrenheitToKelvin(fahrenheit : float = None):
         return "Invalid data in query string", 400
 # static double kelvinToFahrenheit(double kelvin) Returns degrees Fahrenheit from degrees Kelvin, F= 9 K −459.67 5
 
-@app.route('/temperature/kelvinToFahrenheit')
+@app.route('/api/temperature/kelvinToFahrenheit')
 
 def kelvinToFahrenheit(kelvin : float = None):
 
@@ -114,7 +120,7 @@ def kelvinToFahrenheit(kelvin : float = None):
         print(e)
         return "Invalid data in query string", 400
 # static double kelvinToCelsius(double kelvin) Returns degrees Celsius from degrees Kelvin, C=K−273.15
-@app.route('/temperature/kelvinToCelcius')
+@app.route('/api/temperature/kelvinToCelcius')
 
 def kelvinToCelcius(kelvin : float = None):
 

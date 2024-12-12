@@ -1,4 +1,9 @@
-import math as Math
+"""
+@author  Joseph Adogeri
+@since   12-DEC-2024
+@version 1.0   
+
+"""
 import sys 
 from os.path import dirname, abspath
 
@@ -10,7 +15,7 @@ sys.path.append(dir)
 from app import *  
 
 #Returns number of minutes from seconds, 1 minute = 60 seconds
-@app.route('/time/secondsToMinutes')
+@app.route('/api/time/secondsToMinutes')
 def secondsToMinutes(seconds : int = None):
     try:
         minutes : float;
@@ -29,7 +34,7 @@ def secondsToMinutes(seconds : int = None):
         return "Invalid data in query string", 400
 
 #Returns number of hours from seconds, 1 hour = 60 minutes
-@app.route('/time/secondsToHours')
+@app.route('/api/time/secondsToHours')
 def secondsToHours( seconds : int = None): 
     try:
         minutes : float;
@@ -56,7 +61,7 @@ def secondsToHours( seconds : int = None):
 
 
 #Returns number of days from seconds, 1 day = 24 hours
-@app.route('/time/secondsToDays')
+@app.route('/api/time/secondsToDays')
 def secondsToDays(seconds : int = None): 
     try:
         minutes : float;
@@ -88,7 +93,7 @@ def secondsToDays(seconds : int = None):
 
 
 #Returns number of years from seconds, 1 year = 365 days
-@app.route('/time/secondsToYears')
+@app.route('/api/time/secondsToYears')
 def secondsToYears(seconds : int = None): 
     try:
         minutes : float;
@@ -126,7 +131,7 @@ def secondsToYears(seconds : int = None):
 
 
 #Returns number of seconds from minutes, 1 minute = 60 seconds
-@app.route('/time/minutesToSeconds')
+@app.route('/api/time/minutesToSeconds')
 def minutesToSeconds(minutes : float = None): 
     try:
         seconds : float;
@@ -147,7 +152,7 @@ def minutesToSeconds(minutes : float = None):
         return "Invalid data in query string", 400
 
 #Returns number of seconds from hours, 1 hour = 60 minutes
-@app.route('/time/hoursToSeconds')
+@app.route('/api/time/hoursToSeconds')
 def hoursToSeconds(hours : float = None):
     try:
         minutes : float;
@@ -175,7 +180,7 @@ def hoursToSeconds(hours : float = None):
 
 
 #Returns number of seconds from days, 1 day = 24 hours
-@app.route('/time/daysToSeconds')
+@app.route('/api/time/daysToSeconds')
 def daysToSeconds(days : float = None):
     try:
         minutes : float;
@@ -208,7 +213,7 @@ def daysToSeconds(days : float = None):
 
 
 #Returns number of seconds from hours, 1 year = 365 days
-@app.route('/time/yearsToSeconds')
+@app.route('/api/time/yearsToSeconds')
 def yearsToSeconds(years : float = None): 
     try:
         minutes : float;

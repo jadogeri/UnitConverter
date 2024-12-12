@@ -1,3 +1,3 @@
 DELETE 
-FROM API;
+FROM API
 

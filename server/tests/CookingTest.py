@@ -1,3 +1,9 @@
+"""
+@author  Joseph Adogeri
+@since   12-DEC-2024
+@version 1.0   
+
+"""
 
 import requests
 import unittest
@@ -38,9 +44,6 @@ class CookingTest(unittest.TestCase):
         self.pints = 0.0
 
     def test_teaspoons_to_tablespoons(self):
-        #Act
-        # result = make_request(self.num1)
-
         try:
             #Act
             response = requests.get(f'{base_url}/cooking/teaspoonsToTablespoons?teaspoons={self.teaspoons}')
@@ -59,8 +62,6 @@ class CookingTest(unittest.TestCase):
             return e
 
     def test_tablespoons_to_teaspoons_(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -80,9 +81,6 @@ class CookingTest(unittest.TestCase):
             return e
 
     def test_tablespoons_to_cups_(self):
-        #Act
-        # result = make_request(self.num1)
-
         try:
             #Act
             response = requests.get(f'{base_url}/cooking/tablespoonsToCups?tablespoons={self.tablespoons2}')
@@ -101,8 +99,6 @@ class CookingTest(unittest.TestCase):
             return e
 
     def test_cups_to_tablespoons(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -140,8 +136,6 @@ class CookingTest(unittest.TestCase):
             return e
 
     def test_cups_to_ounces(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -196,8 +190,6 @@ class CookingTest(unittest.TestCase):
         except requests.exceptions.RequestException as e:
             print('Error:==', e)
             return e
-
-
 
 if __name__ == "__main__":
     unittest.main()

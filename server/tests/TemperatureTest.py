@@ -1,3 +1,9 @@
+"""
+@author  Joseph Adogeri
+@since   12-DEC-2024
+@version 1.0   
+
+"""
 
 import requests
 import unittest
@@ -32,8 +38,6 @@ class TemperatureTest(unittest.TestCase):
         self.kelvin = 0.0
 
     def test_celcius_to_fahrenheit(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -53,8 +57,6 @@ class TemperatureTest(unittest.TestCase):
             return e
 
     def test_celcius_to_kelvin(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -74,8 +76,6 @@ class TemperatureTest(unittest.TestCase):
             return e
         
     def test_fahrenheit_to_celcius(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -113,7 +113,7 @@ class TemperatureTest(unittest.TestCase):
             return e
         
     def test_kelvin_to_fahrenheit(self):
-            #Act
+
         try:
             #Act
             response = requests.get(f'{base_url}/temperature/kelvinToFahrenheit?kelvin={self.kelvin}')
@@ -132,8 +132,6 @@ class TemperatureTest(unittest.TestCase):
             return e
 
     def test_kelvin_to_celcius(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act

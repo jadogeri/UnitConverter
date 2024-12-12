@@ -2,13 +2,14 @@
 @author  Joseph Adogeri
 @since   01-AUG-2024
 @version 1.0   
-"""
 
+"""
 from app import *
 from models.Time import *
 from models.Geometry import *
 from models.Temperature import *
 from models.Cooking import *
+from constants import port, host
 
 @app.route('/')
 def server():
@@ -20,4 +21,4 @@ if __name__ == '__main__':
 
    # Production
    from waitress import serve
-   serve(app, host="0.0.0.0", port=8080)
+   serve(app, host=host, port=port)

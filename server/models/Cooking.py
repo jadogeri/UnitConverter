@@ -1,3 +1,10 @@
+"""
+@author  Joseph Adogeri
+@since   12-DEC-2024
+@version 1.0   
+
+"""
+
 import math as Math
 import sys 
 from os.path import dirname, abspath
@@ -11,7 +18,7 @@ from app import *
 
 # static double teaspoonsToTablespoons(double teaspoons) Returns number of TBSPs from TSP, 1 tablespoon = 3 teaspoons
 
-@app.route('/cooking/teaspoonsToTablespoons')
+@app.route('/api/cooking/teaspoonsToTablespoons')
 def teaspoonsToTablespoons(teaspoons : float = None):
 
     try:
@@ -30,7 +37,7 @@ def teaspoonsToTablespoons(teaspoons : float = None):
         print(e)
         return "Invalid data in query string", 400
     
-@app.route('/cooking/tablespoonsToTeaspoons')
+@app.route('/api/cooking/tablespoonsToTeaspoons')
 def tablespoonsToTeaspoons(tablespoons : float = None):
     try:
         teaspoons : float;
@@ -49,7 +56,7 @@ def tablespoonsToTeaspoons(tablespoons : float = None):
         return "Invalid data in query string", 400
 
 # static double cupsToTablespoons(double cups) Returns number of TBSPs from CUPs, 1 cup = 16 tablespoons
-@app.route('/cooking/tablespoonsToCups')
+@app.route('/api/cooking/tablespoonsToCups')
 
 def tablespoonsToCups(tablespoons : float = None):
 
@@ -71,7 +78,7 @@ def tablespoonsToCups(tablespoons : float = None):
     
 # static double cupsToTablespoons(double cups) Returns number of TBSPs from CUPs, 1 cup = 16 tablespoons
 
-@app.route('/cooking/cupsToTablespoons')
+@app.route('/api/cooking/cupsToTablespoons')
 
 def cupsToTablespoons(cups : float = None):
     try:
@@ -92,7 +99,7 @@ def cupsToTablespoons(cups : float = None):
    
 # static double ouncesToCups(double ounces) Returns number of CUPs from OUNCEs, 1 cup = 8 ounces
 
-@app.route('/cooking/ouncesToCups')
+@app.route('/api/cooking/ouncesToCups')
 
 def ouncesToCups(ounces : float = None):
 
@@ -115,7 +122,7 @@ def ouncesToCups(ounces : float = None):
 # static double cupsToounces(double cups) Returns number of TBSPs from CUPs, 1 cup = 8 ounces
 
 
-@app.route('/cooking/cupsToOunces')
+@app.route('/api/cooking/cupsToOunces')
 
 def cupsToounces(cups : float = None):
     try:
@@ -135,7 +142,7 @@ def cupsToounces(cups : float = None):
         return "Invalid data in query string", 400
 # static double cupsToPints(double cups) Returns number of PINTs from CUPs, 1 cup = 0.5 pints
 
-@app.route('/cooking/cupsToPints')
+@app.route('/api/cooking/cupsToPints')
 
 def cupsToPints(cups : float = None):
 
@@ -158,7 +165,7 @@ def cupsToPints(cups : float = None):
    
 # static double pintsTocups(double pints) Returns number of TBSPs from pints, 1 cup = 0.5 pints
 
-@app.route('/cooking/pintsToCups')
+@app.route('/api/cooking/pintsToCups')
 
 def pintsToCups(pints : float = None):
     try:

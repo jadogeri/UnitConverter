@@ -1,3 +1,9 @@
+"""
+@author  Joseph Adogeri
+@since   12-DEC-2024
+@version 1.0   
+
+"""
 
 import requests
 import unittest
@@ -33,8 +39,6 @@ class TimeTest(unittest.TestCase):
         self.secondes1 = 0;
            
     def test_seconds_to_minutes(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -54,8 +58,6 @@ class TimeTest(unittest.TestCase):
             return e
 
     def test_seconds_to_hours(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -75,8 +77,6 @@ class TimeTest(unittest.TestCase):
             return e
         
     def test_seconds_to_days(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -96,8 +96,6 @@ class TimeTest(unittest.TestCase):
             return e
         
     def test_seconds_to_years(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -117,7 +115,7 @@ class TimeTest(unittest.TestCase):
             return e
         
     def test_minutes_to_seconds(self):
-            #Act
+
         try:
             #Act
             response = requests.get(f'{base_url}/time/minutesToSeconds?minutes={self.num}')
@@ -136,8 +134,6 @@ class TimeTest(unittest.TestCase):
             return e
 
     def test_hours_to_seconds(self):
-        #Act
-        # result = make_request(self.num1)
 
         try:
             #Act
@@ -193,138 +189,7 @@ class TimeTest(unittest.TestCase):
         except requests.exceptions.RequestException as e:
             print('Error:==', e)
             return e
-        
- 
-
-
+    
 
 if __name__ == "__main__":
     unittest.main()
-
-
-
-'''
-
-
-#Returns number of seconds from minutes, 1 minute = 60 seconds
-@app.route('/api/time/minutesToSeconds')
-def minutesToSeconds(minutes : float = None): 
-    try:
-        seconds : float;
-        minutes_string = request.args.get('minutes');
-        if (minutes is not None):
-            seconds = minutes * 60;
-            return str(seconds);
-        elif ( minutes_string is not None ):
-            minutes = float(minutes_string);
-            seconds = minutes * 60;
-            return str(seconds);
-        else:
-            return None;
-
-
-    except Exception as e:
-        print(e)
-        return "Invalid data in query string", 400
-
-#Returns number of seconds from hours, 1 hour = 60 minutes
-@app.route('/api/time/hoursToSeconds')
-def hoursToSeconds(hours : float = None):
-    try:
-        minutes : float;
-        seconds : float;
-        hours_string = request.args.get('hours');
-        if (hours is not None):
-            #convert hours to minutes i.e 60 minutes = i hour
-            minutes = hours * 60;    
-            #convert minutes to seconds  
-            seconds = minutes * 60
-            return str(seconds);
-        elif ( hours_string is not None ):
-            hours = float(hours_string);
-            #convert hours to minutes i.e 60 minutes = i hour
-            minutes = hours * 60;    
-            #convert minutes to seconds  
-            seconds = minutes * 60
-            return str(seconds);
-        else:
-            return None;
-
-    except Exception as e:
-        print(e)
-        return "Invalid data in query string", 400
-
-
-#Returns number of seconds from days, 1 day = 24 hours
-@app.route('/api/time/daysToSeconds')
-def daysToSeconds(days : float = None):
-    try:
-        minutes : float;
-        hours : float;
-        seconds : float;
-        days_string = request.args.get('days');
-        if (days is not None):
-            #convert days to hours
-            hours = days * 24;    
-            #convert hours to minutes   
-            minutes = hours * 60;
-            #convert minutes to seconds
-            seconds = minutes * 60;
-            return str(seconds);
-        elif ( days_string is not None ):
-            days = float(days_string);
-            #convert days to hours
-            hours = days * 24;    
-            #convert hours to minutes   
-            minutes = hours * 60;
-            #convert minutes to seconds
-            seconds = minutes * 60;
-            return str(seconds);
-        else:
-            return None;
-
-    except Exception as e:
-        print(e)
-        return "Invalid data in query string", 400
-
-
-#Returns number of seconds from hours, 1 year = 365 days
-@app.route('/api/time/yearsToSeconds')
-def yearsToSeconds(years : float = None): 
-    try:
-        minutes : float;
-        hours : float;
-        days : float;
-        seconds : float;
-        years_string = request.args.get('years');
-        if (years is not None):
-            #convert years to days 
-            days = years * 365;    
-            #convert days to hours    
-            hours = days * 24;
-            #convert hours to minutes
-            minutes = hours * 60;
-            #convert minutes to seconds
-            seconds = minutes * 60;
-            return str(seconds);
-        elif ( years_string is not None ):
-            years = float(years_string);
-            #convert years to days 
-            days = years * 365;    
-            #convert days to hours    
-            hours = days * 24;
-            #convert hours to minutes
-            minutes = hours * 60;
-            #convert minutes to seconds
-            seconds = minutes * 60;
-            return str(seconds);
-
-    except Exception as e:
-        print(e)
-        return "Invalid data in query string", 400
-
-
-
-
-
-'''
