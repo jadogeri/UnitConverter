@@ -4,7 +4,6 @@
 @version 1.0   
 
 """
-
 import requests
 import unittest
 import sys
@@ -190,6 +189,3 @@ class TimeTest(unittest.TestCase):
             print('Error:==', e)
             return e
     
-
-if __name__ == "__main__":
-    unittest.main()
