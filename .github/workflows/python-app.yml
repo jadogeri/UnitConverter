@@ -33,8 +33,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        python server.py 
-  # &&
-  # sleep 5 &&
-  # cd tests
-  # python tests.py
+        cd tests
+        python tests.py
