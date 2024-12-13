@@ -2,7 +2,7 @@ import React from 'react';
 
 const Geometry = () => {
   return (
-    <div>
+    <div id="geometry">
       Geometry
     </div>
   );

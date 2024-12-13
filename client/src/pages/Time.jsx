@@ -2,8 +2,8 @@ import React from 'react';
 
 const Time = () => {
   return (
-    <div>
-      
+    <div id='time'>
+      Time
     </div>
   );
 }

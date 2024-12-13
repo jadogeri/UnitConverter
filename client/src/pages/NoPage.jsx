@@ -2,7 +2,7 @@ import React from 'react';
 
 const NoPage = () => {
   return (
-    <div>
+    <div style={{height:"100%",width:"100%",color:"green"}}>
       No page
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cooking = () => {
   return (
-    <div>
+    <div id='cooking'>
       Cooking
     </div>
   );

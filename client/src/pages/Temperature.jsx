@@ -2,7 +2,7 @@ import React from 'react';
 
 const Temperature = () => {
   return (
-    <div>
+    <div id='temperature'>
       Temperature
     </div>
   );

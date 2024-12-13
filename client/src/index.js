@@ -7,13 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import {Provider as ReduxProvider} from "react-redux";
 import { store } from './redux/store';
+import { Provider as AuthProvider } from './context/AuthContext'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ReduxProvider store={store} >
-      <App />
+      <AuthProvider >
+        <App />
+      </AuthProvider>
     </ReduxProvider>
   </React.StrictMode>
 );
