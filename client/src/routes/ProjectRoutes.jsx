@@ -9,7 +9,7 @@ import NoPage from "../pages/NoPage.jsx"
 import TestPage from "../pages/TestPage.jsx";
 import Footer from "../layouts/Footer.jsx"
 import Header from "../layouts/Header.jsx"
-// import SideBar from "../layouts/SideBar.jsx";
+import SideBar from "../layouts/SideBar.jsx";
 import NavBar from "../layouts/NavBar.jsx";
 import "../styles/globalbakin.css"
 
@@ -26,7 +26,7 @@ const ProjectRoutes = () => {
 
 		<NavBar />
 		<Header/>
-		{/* <SideBar/> */}
+		<SideBar/>
 		
 			<Routes >				
 				<Route path="/" element={<Home />} index /> 
