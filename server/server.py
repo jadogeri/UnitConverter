@@ -12,7 +12,7 @@ from models.Temperature import *
 from models.Cooking import *
 from constants import port, host
 from apscheduler.schedulers.blocking import BlockingScheduler
-
+from database.init import *
 
 def job():
     print("Executing my job!")
