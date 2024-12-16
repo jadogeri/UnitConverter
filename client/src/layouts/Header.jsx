@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div style={{marginTop : 0, marginBottom : 10,backgroundColor : "pink",zIndex:2}}
-    >
-      Header
+    <div className="w3-hide-small"style={{height:100,width:"100%",position:"fixed",marginTop : 20, backgroundColor : "pink",zIndex:1}}    >
+     <div className='w3-center'
+          style={{fontSize:40,flex:1}}>Unit Converter App</div>
       
     </div>
   );

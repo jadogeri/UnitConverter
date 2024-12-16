@@ -2,9 +2,11 @@ import React from 'react';
 
 const Time = () => {
   return (
-    <div id='time'>
-      Time
-    </div>
+    <main>
+      <div id='time' style={{backgroundColor:"beige"}}>
+        Time
+      </div>
+    </main>
   );
 }
 

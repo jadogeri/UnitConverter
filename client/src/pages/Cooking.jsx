@@ -1,11 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const Cooking = () => {
   return (
-    <div id='cooking'>
-      Cooking
-    </div>
-  );
+    <div id='cooking'>Cooking</div>
+  )
 }
 
-export default Cooking;
+export default Cooking

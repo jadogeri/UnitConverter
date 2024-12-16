@@ -19,10 +19,11 @@ const ProjectRoutes = () => {
 
 	
 	<BrowserRouter >
-	<div className="pagewrapper">
-		<div style={{maringTop:500,marginBottom:20,backgroundcolor:"purple"}}></div>
+	<div className="pagewrapper" style={{backgroundColor:"gold",marginBottom:10,marginTop:20}}>
 		
-		<div style={{maringTop:500,marginBottom:20,backgroundcolor:"purple"}}></div>
+	<div style={{maringTop:500,marginBottom:0,backgroundColor:"green"}}>2</div>
+
+		<div style={{maringTop:500,marginBottom:0,backgroundColor:"brown"}}>2</div>
 
 		<NavBar />
 		<Header/>
