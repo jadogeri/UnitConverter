@@ -1,4 +1,5 @@
 import sqlite3
+import os
 # Connect to the database (or create it if it doesn't exist)
 print("connecting to database....................");
 conn = sqlite3.connect('./database/example.db')
@@ -128,6 +129,11 @@ conn.close()
 
 #.................testing
 c = sqlite3.connect('./database/example.db')
+file_path = os.path.join(os.path.dirname(__file__), 'hello.sh')
+print(file_path)
+if os.path.exists(file_path):
+    print(file_path)
+
 
 # Open and read the file as a single buffer
 fd = open('./database/test.sql', 'r')
@@ -148,23 +154,5 @@ for command in sqlCommands:
         print("Command skipped: ", msg)
 
 
-@scheduler.task('interval', id='my_task', seconds=15)
-def run_bash_script():
-      import subprocess
-      file_path = os.path.join(os.path.dirname(__file__), 'hello.sh')
-      print(file_path)
-      if os.path.exists(file_path):
-         subprocess.call(['bash', file_path])  
-      else:
-         print("File not found:", file_path)
-'''
 
-# @scheduler.scheduled_job('interval', minutes=5)
-# def my_job():
-#     file_path = os.path.join(os.path.dirname(__file__), 'data.txt')
-#     if os.path.exists(file_path):
-#         with open(file_path, 'r') as f:
-#             print(f.read())
-#     else:
-#         print("File not found:", file_path)
-'''
+
