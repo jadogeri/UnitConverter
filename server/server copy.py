@@ -1,20 +1,35 @@
-from flask import Flask
-from flask_apscheduler import APScheduler
-from rq import Queue
-from worker import conn
+"""
+@author  Joseph Adogeri
+@since   01-AUG-2024
+@version 1.0   
 
-app = Flask(__name__)
-scheduler = APScheduler()
-queue = Queue(connection=conn)
+"""
 
-@scheduler.task('interval', id='my_job', seconds=30)
-def my_job():
-    queue.enqueue(long_running_task)
+from app import *
+from models.Time import *
+from models.Geometry import *
+from models.Temperature import *
+from models.Cooking import *
+from constants import port, host
+from apscheduler.schedulers.background import BackgroundScheduler
+from database.init import *
 
-def long_running_task():
-    # Perform time-consuming operations here
+def job():
+    print("Executing my job!")
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(job, 'interval', seconds=5)
+
+@app.route('/')
+def server():
+   return 'Hello Server'
 
 if __name__ == '__main__':
-    scheduler.init_app(app)
-    scheduler.start()
-    app.run()
+   # Development 
+   # app.run(debug=True)
+   scheduler.start()
+   
+
+   # Production
+   from waitress import serve
+   serve(app, host=host, port=port)
