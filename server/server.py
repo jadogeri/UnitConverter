@@ -18,7 +18,7 @@ def job():
     print("Executing my job!")
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(job, 'interval', seconds=5)
+scheduler.add_job(job, 'interval', seconds=15)
 
 @app.route('/')
 def server():
