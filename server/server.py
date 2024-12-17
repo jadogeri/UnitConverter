@@ -2,11 +2,12 @@
 from flask import Flask
 from flask_apscheduler import APScheduler
 from rq import Queue
-from worker import conn
 
 app = Flask(__name__)
 scheduler = APScheduler()
-queue = Queue(connection=conn)
+# queue = Queue(connection=conn)
+queue = Queue(daemon=True)
+
 
 @app.route('/')
 def server():
@@ -23,4 +24,4 @@ def long_running_task():
 if __name__ == '__main__':
     scheduler.init_app(app)
     scheduler.start()
-    app.run()
+    app.run();
