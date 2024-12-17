@@ -11,14 +11,14 @@ from models.Geometry import *
 from models.Temperature import *
 from models.Cooking import *
 from constants import port, host
-from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 from database.init import *
 
 def job():
     print("Executing my job!")
 
-scheduler = BlockingScheduler()
-scheduler.add_job(job, 'interval', seconds=10)
+scheduler = BackgroundScheduler()
+scheduler.add_job(job, 'interval', seconds=5)
 
 @app.route('/')
 def server():

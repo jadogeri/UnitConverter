@@ -78,9 +78,11 @@ cur = conn.cursor()
 cur.execute('SELECT * FROM students')
 rows = cur.fetchall()
 # Print the results
+'''
 for row in rows:
     print(row)
 # Close the connection
+'''
 conn.close()
 # 6. Updating Data (Update)
 
@@ -120,8 +122,11 @@ cur = conn.cursor()
 cur.execute('SELECT * FROM students')
 rows = cur.fetchall()
 # Print the results
+'''
 for row in rows:
     print(row)
+ 
+'''
 # Close the connection
 conn.close()
 # 6. Updating Data (Update)
@@ -129,14 +134,15 @@ conn.close()
 
 #.................testing
 c = sqlite3.connect('./database/example.db')
-file_path = os.path.join(os.path.dirname(__file__), 'hello.sh')
+cur = c.cursor();
+file_path = os.path.join(os.path.dirname(__file__), 'scripts\\test.sql')
 print(file_path)
 if os.path.exists(file_path):
     print(file_path)
 
 
 # Open and read the file as a single buffer
-fd = open('./database/test.sql', 'r')
+fd = open(file_path, 'r')
 sqlFile = fd.read()
 fd.close()
 
@@ -149,10 +155,25 @@ for command in sqlCommands:
     # For example, if the tables do not yet exist, this will skip over
     # the DROP TABLE commands
     try:
-        c.execute(command)
+        cur.execute(command)
+        # Fetch data
+        
+        rows = cur.fetchall()
+        print("names after ................................")
+        for row in rows:
+            print(row)
     except Exception as msg:
         print("Command skipped: ", msg)
 
 
 
-
+# Connect to the database
+conn = sqlite3.connect('./database/example.db')
+cur = conn.cursor()
+# Delete all data
+cur.execute('''
+DELETE FROM students
+''')
+# Commit the changes and close the connection
+conn.commit()
+conn.close()
