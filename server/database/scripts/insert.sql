@@ -6,20 +6,20 @@
 **/
 
 -- SERVICE 
-INSERT INTO SERVICE(name) VALUES ("time");
-INSERT INTO SERVICE(name) VALUES ("temperature");
-INSERT INTO SERVICE(name) VALUES ("geometry");
-INSERT INTO SERVICE(name) VALUES ("cooking");
+INSERT INTO SERVICE(s_name) VALUES ("time");
+INSERT INTO SERVICE(s_name) VALUES ("temperature");
+INSERT INTO SERVICE(s_name) VALUES ("geometry");
+INSERT INTO SERVICE(s_name) VALUES ("cooking");
 
 -- DAILYSPAN
-INSERT INTO DAILYSPAN(name) VALUES ("time");
-INSERT INTO DAILYSPAN(name) VALUES ("temperature");
-INSERT INTO DAILYSPAN(name) VALUES ("geometry");
-INSERT INTO DAILYSPAN(name) VALUES ("cooking");
+INSERT INTO DAILYSPAN(d_name) VALUES ("time");
+INSERT INTO DAILYSPAN(d_name) VALUES ("temperature");
+INSERT INTO DAILYSPAN(d_name) VALUES ("geometry");
+INSERT INTO DAILYSPAN(d_name) VALUES ("cooking");
 
 
 -- LIFESPAN
-INSERT INTO LIFESPAN(name) VALUES ("time");
-INSERT INTO LIFESPAN(name) VALUES ("temperature");
-INSERT INTO LIFESPAN(name) VALUES ("geometry");
-INSERT INTO LIFESPAN(name) VALUES ("cooking");
+INSERT INTO LIFESPAN(l_name) VALUES ("time");
+INSERT INTO LIFESPAN(l_name) VALUES ("temperature");
+INSERT INTO LIFESPAN(l_name) VALUES ("geometry");
+INSERT INTO LIFESPAN(l_name) VALUES ("cooking");
