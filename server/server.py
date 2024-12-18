@@ -27,7 +27,7 @@ def server():
 if __name__ == '__main__':
    # Development 
    # app.run(debug=True)
-   scheduler.start()
+   #scheduler.start()
    
 
    # Production
