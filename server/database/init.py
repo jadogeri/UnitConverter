@@ -1,5 +1,10 @@
 import sqlite3
 import os
+
+update_scripts = { "lifespan" :  "UPDATE LIFESPAN SET l_total = ? WHERE ? >= 0 AND l_name = ?",
+                   "dailyspan" :  "UPDATE DAILYSPAN SET d_total = ? WHERE ? >= 0 AND d_name = ?"
+                 }
+
 # Connect to the database (or create it if it doesn't exist)
 print("connecting to database....................");
 conn = sqlite3.connect('./database/api.db')
@@ -134,36 +139,24 @@ for command in sqlCommands:
 ''' update data from tables'''
 
 
-
-file_path = scripts_path +  '\\update.sql';
-print("update data in table file path ===",file_path)
-if os.path.exists(file_path):
-    print(file_path)
-
-# Open and read the file as a single buffer
-fd = open(file_path, 'r')
-sqlFile = fd.read()
-fd.close()
-
-# all SQL commands (split on ';')
-sqlCommands = sqlFile.split(';')
-
-
-
+command = update_scripts["dailyspan"]
 cur.execute("PRAGMA foreign_keys = ON");
 # Execute every create table command from the input file
 
 c_val = 0
-for command in sqlCommands:
-    c_val = c_val + 1
-    try:
-        print("  (",c_val,") =>",command )
-        cur.execute(command,( 2,"time"))           
-       
+c_val = c_val + 1
+try:
+    
+    print("  (",c_val,") =>",command )
+    vals = (2,2, 'time')    
 
-        
-    except Exception as msg:
-        print("Command skipped: ", msg);
+    cur.execute(command,vals)           
+    conn.commit();
+
+
+    
+except Exception as msg:
+    print("Command skipped: ", msg);
 conn.commit();
 
 
