@@ -14,12 +14,11 @@ from constants import port, host
 from apscheduler.schedulers.background import BackgroundScheduler
 from database.init import *
 from models.Record import *
+from database.functions.resetDailySpanJob import job
 
-def job():
-    print("Executing my job!")
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(job, 'interval', seconds=15)
+scheduler.add_job(job, 'interval', seconds=50)
 
 @app.route('/')
 def server():
@@ -28,7 +27,7 @@ def server():
 if __name__ == '__main__':
    # Development 
    # app.run(debug=True)
-   #scheduler.start()
+   scheduler.start()
    
 
    # Production

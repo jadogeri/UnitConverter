@@ -6,7 +6,7 @@
 '''
 import sqlite3
 from os.path import dirname, abspath
-from ..scripts.update import update_scripts
+from ..scripts.update_scripts import update_scripts
 
 def updateRecord(table,total,service_name):
 
