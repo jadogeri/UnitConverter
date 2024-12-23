@@ -13,6 +13,7 @@ from models.Cooking import *
 from constants import port, host
 from apscheduler.schedulers.background import BackgroundScheduler
 from database.init import *
+from models.Record import *
 
 def job():
     print("Executing my job!")

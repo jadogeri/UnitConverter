@@ -5,8 +5,10 @@
 
 **/
 
-SELECT * FROM SERVICE;
-
-SELECT * FROM  DAILYSPAN ;
-
-SELECT * FROM LIFESPAN;
+SELECT l_name "LIFESPAN SERVICE",
+       l_total "LS TOTAL",
+       d_name "DAILYSPAN SERVICE",
+       d_total "DS TOTAL"
+FROM DAILYSPAN
+INNER JOIN LIFESPAN
+ON (l_name = d_name);

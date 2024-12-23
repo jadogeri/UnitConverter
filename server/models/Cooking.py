@@ -11,7 +11,6 @@ from os.path import dirname, abspath
 
 from flask import request
 dir = dirname(dirname(abspath(__file__)))
-print("absolute path === ",dir)
 
 sys.path.append(dir)
 from app import *  
