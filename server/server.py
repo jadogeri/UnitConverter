@@ -4,7 +4,7 @@
 @version 1.0   
 
 """
-
+from flask_cors import CORS
 from app import *
 from models.Record import *
 from models.Time import *
@@ -16,7 +16,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from database.init import *
 from database.functions.resetDailySpanJob import job
 
-
+CORS(app)
 scheduler = BackgroundScheduler()
 scheduler.add_job(job, 'interval', seconds=50)
 
