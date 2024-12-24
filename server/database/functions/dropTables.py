@@ -13,7 +13,7 @@ def dropTables():
 
     dir = dirname(dirname(abspath(__file__)))
     db_file = dir + "\\api.db"
-    scripts_path = dir + "\\scripts";
+    scripts_path = dir + "/scripts";
 
     # Connect to the database (or create it if it doesn't exist)
     print("connecting to database....................");
@@ -21,9 +21,9 @@ def dropTables():
     # Create a cursor object
 
     cur = conn.cursor();
-    file_path = scripts_path +  '\\dropTables.sql';
+    file_path = scripts_path +  '/dropTables.sql';
     if os.path.exists(file_path):
-        print(file_path)
+        print("drop file path === ",file_path)
 
     # Open and read the file as a single buffer
     fd = open(file_path, 'r')
