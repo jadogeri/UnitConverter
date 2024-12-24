@@ -13,14 +13,14 @@ def fetchRecords():
 
     records = [];
     dir = dirname(dirname(abspath(__file__)))
-    func_dir = dir +"\\functions"
+    func_dir = dir +"/functions"
     print("dir in fetch records ===",func_dir)
 
     sys.path.append(dir)
     sys.path.append(func_dir)
 
-    db_file = dir + "\\api.db"
-    scripts_path = dir + "\\scripts";
+    db_file = dir + "/api.db"
+    scripts_path = dir + "/scripts";
 
     # Connect to the database (or create it if it doesn't exist)
     print("connecting to database....................");
@@ -28,7 +28,7 @@ def fetchRecords():
 
     # Create a cursor object
     cur = conn.cursor();
-    file_path = scripts_path +  '\\select.sql';
+    file_path = scripts_path +  '/select.sql';
     print("file path ===",file_path)
     if os.path.exists(file_path):
         print(file_path)

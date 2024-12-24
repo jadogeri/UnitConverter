@@ -16,7 +16,7 @@ def updateRecord(table,total,service_name):
     sqlcommands = update_scripts();
     command =sqlcommands[table];
     dir = dirname(dirname(abspath(__file__)))
-    db_file = dir + "\\api.db"
+    db_file = dir + "/api.db"
 
     # Connect to the database (or create it if it doesn't exist)
     print("connecting to database....................");

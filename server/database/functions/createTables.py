@@ -13,8 +13,8 @@ import sys
 def createTables():
 
     dir = dirname(dirname(abspath(__file__)))
-    db_file = dir + "\\api.db"
-    scripts_path = dir + "\\scripts";
+    db_file = dir + "/api.db"
+    scripts_path = dir + "/scripts";
 
     # Connect to the database (or create it if it doesn't exist)
     print("connecting to database....................");
@@ -22,7 +22,7 @@ def createTables():
     # Create a cursor object
 
     cur = conn.cursor();
-    file_path = scripts_path +  '\\createTables.sql';
+    file_path = scripts_path +  '/createTables.sql';
     if os.path.exists(file_path):
         print(file_path)
 

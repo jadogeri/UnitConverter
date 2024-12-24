@@ -10,8 +10,8 @@ from os.path import dirname, abspath
 
 def insertRecords():
     dir = dirname(dirname(abspath(__file__)))
-    db_file = dir + "\\api.db"
-    scripts_path = dir + "\\scripts";
+    db_file = dir + "/api.db"
+    scripts_path = dir + "/scripts";
 
     # Connect to the database (or create it if it doesn't exist)
     print("connecting to database....................");
@@ -19,7 +19,7 @@ def insertRecords():
 
     # Create a cursor object
     cur = conn.cursor();
-    file_path = scripts_path +  '\\inserts.sql';
+    file_path = scripts_path +  '/inserts.sql';
     print("file path ===",file_path)
     if os.path.exists(file_path):
         print(file_path)

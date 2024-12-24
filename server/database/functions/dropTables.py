@@ -12,7 +12,7 @@ from os.path import dirname, abspath
 def dropTables():
 
     dir = dirname(dirname(abspath(__file__)))
-    db_file = dir + "\\api.db"
+    db_file = dir + "/api.db"
     scripts_path = dir + "/scripts";
 
     # Connect to the database (or create it if it doesn't exist)
