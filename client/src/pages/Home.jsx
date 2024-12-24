@@ -1,9 +1,10 @@
 import React, {useState, useContext} from 'react';
-import { Context as AuthContext } from '../context/AuthContext'
+import { Context as APIContext } from '../context/APIContext'
 import APICard from '../components/APICard';
+import ServiceTable from '../components/ServiceTable';
 
 const Home = () => {
-  const {  state } = useContext(AuthContext)
+  const {  state } = useContext(APIContext)
 
   return (
     <>
@@ -71,6 +72,10 @@ const Home = () => {
     />   <APICard src="https://www.w3schools.com/w3images/team4.jpg"
     label="TIME" route="time"
     />
+    
+    <hr/>
+<ServiceTable />
+
 
   </div>
 </div>
@@ -81,3 +86,5 @@ const Home = () => {
 }
 
 export default Home;
+
+

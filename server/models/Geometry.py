@@ -147,5 +147,3 @@ def getPerimeterTriangle( side1 : float = None, side2 : float = None, side3 : fl
     except Exception as e:
         print(e)
         return "Invalid data in query string", 400
-
-

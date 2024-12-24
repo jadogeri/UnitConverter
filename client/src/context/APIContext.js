@@ -1,6 +1,7 @@
 import createDataContext from "./createDataContext";
+import { cookingActions } from "../actions/cookingActions";
 
-const initialState = { cooking : 0, temperature: 0, time : 0, geometry: 0, isLoading: true}
+const initialState = { cooking : 0, temperature: 0, time : 0, geometry: 0, isLoading: true,  result : 0}
 
 const authReducer = (state, action) => {
     switch (action.type) {
@@ -127,6 +128,6 @@ const signout = (dispatch) => {
 }
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { signup, signout, signin, clearErrorMessage, tryLocalSignin },
+    { signup, signout, signin, clearErrorMessage, tryLocalSignin, ...cookingActions},
     initialState
 );

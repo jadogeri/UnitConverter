@@ -6,6 +6,7 @@
 """
 
 from app import *
+from models.Record import *
 from models.Time import *
 from models.Geometry import *
 from models.Temperature import *
@@ -13,7 +14,6 @@ from models.Cooking import *
 from constants import port, host
 from apscheduler.schedulers.background import BackgroundScheduler
 from database.init import *
-from models.Record import *
 from database.functions.resetDailySpanJob import job
 
 
@@ -27,7 +27,7 @@ def server():
 if __name__ == '__main__':
    # Development 
    # app.run(debug=True)
-   scheduler.start()
+   #scheduler.start()
    
 
    # Production

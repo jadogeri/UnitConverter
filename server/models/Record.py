@@ -11,7 +11,6 @@ dir = dirname(dirname(abspath(__file__)))
 sys.path.append(dir)
 from app import *  
 from flask import Flask, request, jsonify
-app = Flask(__name__)
 from database.functions.fetchRecords import *
 from database.functions.updateRecord import *
 
@@ -85,7 +84,7 @@ def put_record():
     updateRecord("dailyspan",d_total,d_name);
     return jsonify({"message": f"Received data {data}"})
 
-
+'''
 @app.route('/items', methods=['GET'])
 def get_items():
     return "Getting all items"
@@ -106,22 +105,4 @@ def update_item(item_id):
 def delete_item(item_id):
     return f"Deleting item {item_id}"
 
-  
-@app.route('/records/tablespoonsToTeaspoons')
-def tablespoonsToTeaspoons(tablespoons : float = None):
-    try:
-        teaspoons : float;
-        tablespoons_string = request.args.get('tablespoons');
-        if (tablespoons is not None):
-            teaspoons = round(tablespoons * 3,2);
-            return str(teaspoons);       
-        elif ( tablespoons_string is not None ):
-            tablespoons = float(tablespoons_string);
-            teaspoons = round(tablespoons * 3,2);
-            return str(teaspoons);
-        else : 
-            return None;
-    except Exception as e:
-        print(e)
-        return "Invalid data in query string", 400
-
+''' 

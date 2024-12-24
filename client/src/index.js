@@ -5,20 +5,20 @@ import "../src/styles/global.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import {Provider as ReduxProvider} from "react-redux";
-import { store } from './redux/store';
-import { Provider as AuthProvider } from './context/AuthContext'
+// import {Provider as ReduxProvider} from "react-redux";
+// import { store } from './redux/store';
+import { Provider as APIProvider } from './context/APIContext'
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ReduxProvider store={store} >
-      <AuthProvider >
+    {/* <ReduxProvider store={store} > */}
+      <APIProvider >
         <App />
-      </AuthProvider>
-    </ReduxProvider>
+      </APIProvider>
+    {/* </ReduxProvider> */}
   </React.StrictMode>
 );
 
