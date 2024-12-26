@@ -3,6 +3,9 @@ https://medium.com/pythoneers/learning-sqlite3-in-python-basic-crud-operations-2
 
 https://abhishekkumar-0311.medium.com/how-to-use-sql-in-python-jupyter-notebook-8633e7502035
 
+
+
+https://www.javatpoint.com/apschedular-python-example
 ----------------------------------------------------------
 ----------------------------------------------------------
 
