@@ -1,22 +1,8 @@
 import createDataContext from "./createDataContext";
 import { cookingActions } from "../actions/cookingActions";
-
+import { temperatureActions } from "../actions/temperatureActions";
+import { APIReducer } from "../reducers/APIReducer";
 const initialState = { cooking : 0, temperature: 0, time : 0, geometry: 0, isLoading: true,  result : 0}
-
-const authReducer = (state, action) => {
-    switch (action.type) {
-
-        case 'add_error':
-            return { ...state, errorMessage: action.payload }
-        case 'RESET':
-            return { ...state, errorMessage: 'joseph signed in', isLoggedIn: false, username: null, email: null, id: null, isLoading: false }
-
-        case 'TEMPERATURE':
-            return { ...state, temperature : action.payload, isLoading: false }
-
-        default: return state;
-    }
-}
 
 // if (Date.now() >= exp * 1000) {
 //     return false;
@@ -127,7 +113,7 @@ const signout = (dispatch) => {
     }
 }
 export const { Provider, Context } = createDataContext(
-    authReducer,
-    { signup, signout, signin, clearErrorMessage, tryLocalSignin, ...cookingActions},
+    APIReducer,
+    { signup, signout, signin, clearErrorMessage, tryLocalSignin, ...cookingActions, ...temperatureActions},
     initialState
 );

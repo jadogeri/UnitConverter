@@ -1,50 +1,69 @@
-import { useContext,useState } from 'react'
+import { useState } from 'react'
 import React from 'react'
-import { Context as APIContext} from "../context/APIContext"
-
-import { handleAccordion } from '../utils/handleAccordion'
+import useCooking from '../hooks/useCooking'
+import CollapsibleOneInput from '../components/CollapsibleOneInput'
+import { CONVERSION_TYPES } from '../data/conversionText'
+import Spacer from '../components/Spacer'
 
 
 const Cooking = () => {
   const [data, setData]= useState(0);
-const {state, teaspoonsToTablespoonsAction} = useContext(APIContext)
-
+const [state,teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
+      cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
+      ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
+  
+] = useCooking();
 
 const handleAction = (teaspoons)=>{
-  let t = 40
-  alert(`teaspoon in handle action === ${t}`)
-  teaspoonsToTablespoonsAction(t)
+  alert(`teaspoon in handle action === ${teaspoons}`)
+  teaspoonsToTablespoonsAction(teaspoons)
 }
   return (
     <>
+    <Spacer marginTop={40} marginBottom={40}/>
+
     <div id='cooking'>Cooking</div>
     <hr/>
-    <h1>{JSON.stringify(state)} </h1>
-    <h1>{JSON.stringify(data)} </h1>
-<button onClick={()=>{handleAction(20)}}>press me</button>
-<h2 className="w3-center">Accordions</h2>
-<button onClick={()=>{handleAccordion('Demo1')}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Open Section 1</button>
-<div id="Demo1" className="w3-hide">
-  <div className="w3-container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </div>
-</div>
-<button onClick={()=>{handleAccordion('Demo2')}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Open Section 2</button>
-<div id="Demo2" className="w3-hide">
-  <a href="#" className="w3-button w3-block w3-left-align">Link 1</a>
-  <a href="#" className="w3-button w3-block w3-left-align">Link 2</a>
-  <a href="#" className="w3-button w3-block w3-left-align">Link 3</a>
-</div>
-<button onClick={()=>{handleAccordion('Demo3')}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Open Section 3</button>
-<div id="Demo3" className="w3-hide w3-black">
-  <div className="w3-container">
-    <p>Accordion with Images:</p>
-    <img src="img_snowtops.jpg" style={{"width":"30%"}} className="w3-animate-zoom"/>
-    <p>French Alps</p>
-  </div>
-</div>
-    </>
+
+
+<CollapsibleOneInput title="Convert Tablespoons to Teaspoons" id="cooking1"
+                  conversionText={CONVERSION_TYPES.COOKING.TABLESPOONS_TO_TEASPOONS}
+                  handler={tablespoonsToTeaspoonsAction} service="cooking"
+/>
+<CollapsibleOneInput title="Convert Teaspoons to Tablespoons" id="cooking2"
+                  conversionText={CONVERSION_TYPES.COOKING.TEASPOONS_TO_TABLESPOONS}
+                  handler={teaspoonsToTablespoonsAction} service="cooking"
+/>
+
+<CollapsibleOneInput title="Convert Cups to Pints" id="cooking3"
+                  conversionText={CONVERSION_TYPES.COOKING.CUPS_TO_PINTS}
+                  handler={cupsToPintsAction} service="cooking"
+/>
+
+<CollapsibleOneInput title="Convert Pints to Cups" id="cooking4"
+                  conversionText={CONVERSION_TYPES.COOKING.PINTS_TO_CUPS}
+                  handler={pintsToCupsAction} service="cooking"
+/>
+<CollapsibleOneInput title="Convert Cups to Ounces" id="cooking5"
+                  conversionText={CONVERSION_TYPES.COOKING.CUPS_TO_OUNCES}
+                  handler={cupsToOuncesAction} service="cooking"
+/>
+<CollapsibleOneInput title="Convert Ounces to Cups" id="cooking6"
+                  conversionText={CONVERSION_TYPES.COOKING.OUNCES_TO_CUPS}
+                  handler={ouncesToCupsAction} service="cooking"
+/>
+<CollapsibleOneInput title="Convert Cups to Tablespoons" id="cooking7"
+                  conversionText={CONVERSION_TYPES.COOKING.CUPS_TO_TABLESPOONS}
+                  handler={cupsToTablespoonsAction} service="cooking"
+/>
+<CollapsibleOneInput title="Convert Tablespoons to Cups" id="cooking8"
+                  conversionText={CONVERSION_TYPES.COOKING.TABLESPOONS_TO_CUPS}
+                  handler={tablespoonsToCupsAction} service="cooking"
+/>
+<Spacer marginTop={40} marginBottom={40}/>
+  </>
   )
 }
 
 export default Cooking
+

@@ -1,113 +1,110 @@
-const teaspoonsToTablespoonsAction = (dispatch) => {
-    return async () => {
-        try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
+import api  from "../configs/axios"
+import { ACTION_TYPES } from "../actionTypes/actionTypes"
 
+const celciusToFahrenheitAction = (dispatch) => {
+
+    return async (celcius) => {
+        try {
+            const response = await api.get(`/temperature/celciusToFahrenheit?celcius=${celcius}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const tablespoonsToTeaspoonsAction = (dispatch) => {
-    return async () => {
+const celciusToKelvinAction = (dispatch) => {
+    return async (celcius) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/temperature/celciusToKelvin?celcius=${celcius}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result})
+            return result
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
+const kelvinToFahrenheitAction = (dispatch) => {
 
-const tablespoonsToCupsAction = (dispatch) => {
-    return async () => {
+    return async (kelvin) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/temperature/kelvinToFahrenheit?kelvin=${kelvin}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const cupsToTablespoonsAction = (dispatch) => {
-    return async () => {
+const fahrenheitToKelvinAction = (dispatch) => {
+    return async (fahrenheit) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/temperature/fahrenheitToKelvin?fahrenheit=${fahrenheit}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result})
+            return result
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const ouncesToCupsAction = (dispatch) => {
-    return async () => {
-        try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
+const kelvinToCelciusAction = (dispatch) => {
 
+    return async (kelvin) => {
+        try {
+            const response = await api.get(`/temperature/kelvinToCelcius?kelvin=${kelvin}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const cupsToOuncesAction = (dispatch) => {
-    return async () => {
+const fahrenheitToCelciusAction = (dispatch) => {
+    return async (fahrenheit) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/temperature/fahrenheitToCelcius?fahrenheit=${fahrenheit}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result})
+            return result
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
-    }
-}
-
-const pintsToCupsAction = (dispatch) => {
-
-return async () => {
-    try {
-
-    } catch (e) {
-        console.log('expired token')
-        localStorage.removeItem('token');
-        dispatch({ type: 'RESET' });
-
-    }
-}
-}
-
-const cupsToPintsAction = (dispatch) => {
-    return async () => {
-        try {
-
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
-        }
+    
     }
 }
 
 export const temperatureActions = {
-    teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
-    cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
-    ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
-
+    kelvinToCelciusAction, kelvinToFahrenheitAction,celciusToFahrenheitAction,
+    celciusToKelvinAction,fahrenheitToCelciusAction,fahrenheitToKelvinAction
 
 }

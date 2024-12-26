@@ -2,7 +2,7 @@ import React from 'react'
 import ServiceCard from './ServiceCard'
 
 const ServiceBoard = (props) => {
- const {time, temperature, geometry, cooking } = props.data
+  
   return (
     <div className="w3-half">
       <div className="w3-card white">
@@ -11,11 +11,14 @@ const ServiceBoard = (props) => {
         </div>
 
         <ul className="w3-ul w3-border-top">
+     
+        {
+          props.data.map((item)=>{
+            return  <ServiceCard  name={item.name} total={item.total} />
 
-        <ServiceCard name="Time"  total={time}/>
-        <ServiceCard name="Temperature" total={temperature} />
-        <ServiceCard name="Geometry" total={geometry}/>
-        <ServiceCard name="Cooking" total={cooking} />
+          })
+        }
+
 
 
         </ul>

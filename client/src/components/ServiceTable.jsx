@@ -1,9 +1,42 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import ServiceBoard from './ServiceBoard.jsx'
 import { Context as ServiceContext } from '../context/APIContext.js'
+import { useFetchRecordsQuery } from '../redux/api/record.js'
 
 const ServiceTable = () => {
   const {  state } = useContext(ServiceContext)
+  const { data, isError,isLoading,isFetching,isSuccess,isUninitialized } = useFetchRecordsQuery()
+
+  const [dailyspanData, setDailyspanData] = useState([])
+  const [lifespanData, setLifespanData] = useState([])
+  useEffect(()=>{
+    handleLoadRecords()
+    
+  },[data])
+
+  const handleLoadRecords = ()=>{
+    
+    try{
+      if(isSuccess){
+        console.log(data)
+ 
+        data.data.map((item)=>{
+          const {d_name,d_total,l_name,l_total} = item
+          //prevArray => [...prevArray, newObject
+          setDailyspanData(prevArray => [...prevArray, {name : d_name,total : d_total}]);
+          setLifespanData(prevArray => [...prevArray, {name : l_name,total : l_total}]);
+        })
+
+      }
+   
+
+    }catch(e){
+
+    }
+
+  }
+
+
 
   return (
     <>
@@ -15,10 +48,8 @@ const ServiceTable = () => {
           </div>
       </div>
       <div class="w3-row-padding">
-
-<div>{JSON.stringify(state)}</div>
-        <ServiceBoard data={state} title="LIFESPAN"/>
-        <ServiceBoard data={state} title="DAILYSPAN"/>
+        <ServiceBoard data={lifespanData} title="LIFESPAN"/>
+        <ServiceBoard data={dailyspanData} title="DAILYSPAN"/>
 
       </div>
     

@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
 '''
 
-@app.route('/records', methods=['GET'])
+@app.route('/api/records', methods=['GET'])
 def get_records():
     try:
         records = fetchRecords();
@@ -49,7 +49,7 @@ def get_records():
         print(e)
         return "Invalid data in query string", 400
 
-@app.route('/records', methods=['PUT'])
+@app.route('/api/records', methods=['PUT'])
 def put_records():
     data = request.get_json()  # Get the JSON data from the request body
 
@@ -59,29 +59,9 @@ def put_records():
     # Process the data
     print("processing data === ",data)
     
-    l_name = data["l_name"]
-    l_total = data["l_total"];
-    d_name = data["d_name"]
-    d_total = data["d_total"];
+    service_name = data["service_name"]
 
-    updateRecord("lifespan",l_total,l_name);
-    updateRecord("dailyspan",d_total,d_name);
-    return jsonify({"message": f"Received data {data}"})
-
-@app.route('/record', methods=['PUT'])
-def put_record():
-    data = request.get_json()  # Get the JSON data from the request body
-
-    if not data:
-        return jsonify({"error": "No JSON data provided"}), 400
-
-    # Process the data
-    print("processing data === ",data)
-    
-    d_name = data["d_name"]
-    d_total = data["d_total"];
-
-    updateRecord("dailyspan",d_total,d_name);
+    updateRecord(service_name);
     return jsonify({"message": f"Received data {data}"})
 
 '''

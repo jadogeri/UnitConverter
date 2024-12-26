@@ -5,8 +5,8 @@ import "../src/styles/global.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-// import {Provider as ReduxProvider} from "react-redux";
-// import { store } from './redux/store';
+import {Provider as ReduxProvider} from "react-redux";
+import { store } from './redux/store';
 import { Provider as APIProvider } from './context/APIContext'
 
 
@@ -14,11 +14,11 @@ import { Provider as APIProvider } from './context/APIContext'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <ReduxProvider store={store} > */}
+    <ReduxProvider store={store} >
       <APIProvider >
         <App />
       </APIProvider>
-    {/* </ReduxProvider> */}
+    </ReduxProvider>
   </React.StrictMode>
 );
 

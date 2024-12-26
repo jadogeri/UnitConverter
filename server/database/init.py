@@ -27,7 +27,5 @@ fetchRecords();
 
 ''' update data from tables'''
 
-updateRecord("LIFESPAN",2000,"TEMPerature");
-
-updateRecord("DAilySPAN",1500,"time");
+updateRecord("time");
 print(fetchRecords());

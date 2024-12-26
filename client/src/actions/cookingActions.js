@@ -1,119 +1,130 @@
 import api  from "../configs/axios"
-
+import { ACTION_TYPES } from "../actionTypes/actionTypes"
 
 const teaspoonsToTablespoonsAction = (dispatch) => {
 
     return async (teaspoons) => {
         try {
-            alert("calling teaspoon to tablespoon action")
-
-            alert("teaspoon === ",teaspoons)
-
-            console.log('teaspoons: ' + teaspoons)
-
-            const response = await api.get(`/cooking/teaspoonsToTablespoons?teaspoons=${20}`);
+            const response = await api.get(`/cooking/teaspoonsToTablespoons?teaspoons=${teaspoons}`);
             const result = response.data
             console.log(result)
-
-            dispatch({ type: 'COOKING', payload: {result:result, cooking:1 } })
+            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+            return result;
     
         } catch (err) {
-            dispatch({ type: 'add_error', payload: "Something went wrong with sign in" })
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
     
     }
 }
 
 const tablespoonsToTeaspoonsAction = (dispatch) => {
-    return async () => {
+    return async (tablespoons) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/cooking/tablespoonsToTeaspoons?tablespoons=${tablespoons}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.COOKING, payload: result})
+            return result
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
 
 const tablespoonsToCupsAction = (dispatch) => {
-    return async () => {
-        try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
 
+    return async (tablespoons) => {
+        try {
+            const response = await api.get(`/cooking/tablespoonsToCups?tablespoons=${tablespoons}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
 const cupsToTablespoonsAction = (dispatch) => {
-    return async () => {
+    return async (cups) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/cooking/cupsToTablespoons?cups=${cups}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.COOKING, payload: result})
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
 const ouncesToCupsAction = (dispatch) => {
-    return async () => {
+    return async (ounces) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/cooking/ouncesToCups?ounces=${ounces}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.COOKING, payload:result })
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const cupsToOuncesAction = (dispatch) => {
-    return async () => {
-        try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
 
+const cupsToOuncesAction = (dispatch) => {
+    return async (cups) => {
+        try {
+            const response = await api.get(`/cooking/cupsToOunces?cups=${cups}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
 const pintsToCupsAction = (dispatch) => {
 
-return async () => {
-    try {
-
-    } catch (e) {
-        console.log('expired token')
-        localStorage.removeItem('token');
-        dispatch({ type: 'RESET' });
-
+    return async (pints) => {
+        try {
+            const response = await api.get(`/cooking/pintsToCups?pints=${pints}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.COOKING, payload: result})
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
+        }
+    
     }
-}
 }
 
 const cupsToPintsAction = (dispatch) => {
-    return async () => {
+    return async (cups) => {
         try {
-
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/cooking/cupsToPints?cups=${cups}`);
+            const result = response.data
+            console.log(result)
+            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
@@ -121,7 +132,6 @@ export const cookingActions = {
     teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
     cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
     ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
-
 
 }
 

@@ -13,7 +13,7 @@ const NavBar = () => {
     {/* <img className="w3-bar w3-black w3-card"
     style={{backgroundColor :"green",width:100,height:200}} src={require("../assets/villainImages/PredatorHome.jpg")}/> */}
 
-      <a href="#home" className="w3-bar-item w3-button w3-wide" style={{backgroundColor :"red"}}
+      <a href="/" className="w3-bar-item w3-button w3-wide" style={{backgroundColor :"red"}}
      >
         {/* <img src={require("../assets/villainImages/PredatorHome.jpg")} className="w3-bar-item w3-button w3-wide"  alt="logo"  /> */}
         logo

@@ -18,7 +18,7 @@ from database.functions.resetDailySpanJob import job
 
 CORS(app)
 scheduler = BackgroundScheduler()
-scheduler.add_job(job, 'interval', seconds=50)
+scheduler.add_job(job, 'interval', seconds=100)
 
 @app.route('/')
 def server():
@@ -27,7 +27,7 @@ def server():
 if __name__ == '__main__':
    # Development 
    # app.run(debug=True)
-   #scheduler.start()
+   scheduler.start()
    
 
    # Production
