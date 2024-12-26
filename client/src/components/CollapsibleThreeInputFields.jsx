@@ -1,7 +1,6 @@
 import React from 'react'
 import { handleAccordion } from '../utils/handleAccordion'
-import { useRef,useContext,useState } from 'react'
-import { Context } from '../context/APIContext'
+import { useRef,useState } from 'react'
 import { useUpdateRecordsMutation } from '../redux/api/record'
 
 const CollapsibleInput = (props) => {
