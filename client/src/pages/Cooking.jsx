@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import useCooking from '../hooks/useCooking'
-import CollapsibleOneInput from '../components/CollapsibleOneInput'
+import CollapsibleOneInput from '../components/CollapsibleOneInputField'
 import { CONVERSION_TYPES } from '../data/conversionText'
 import Spacer from '../components/Spacer'
 

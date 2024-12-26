@@ -1,113 +1,115 @@
-const teaspoonsToTablespoonsAction = (dispatch) => {
-    return async () => {
+import api  from "../configs/axios"
+import { ACTION_TYPES } from "../actionTypes/actionTypes"
+
+
+const areaRectangleAction = (dispatch) => {
+    return async (width, length) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/geometry/getAreaRectangle?width=${width}&length=${length}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const tablespoonsToTeaspoonsAction = (dispatch) => {
-    return async () => {
+const areaTriangleAction = (dispatch) => {
+    return async (base, height) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/geometry/getAreaTriangle?base=${base}&height=${height}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
 
-const tablespoonsToCupsAction = (dispatch) => {
-    return async () => {
+const areaCircleAction = (dispatch) => {
+    return async (radius) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/geometry/getAreaCircle?radius=${radius}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const cupsToTablespoonsAction = (dispatch) => {
-    return async () => {
+const perimeterRectangleAction = (dispatch) => {
+    return async (width, length) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/geometry/getPerimeterRectangle?width=${width}&length=${length}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const ouncesToCupsAction = (dispatch) => {
-    return async () => {
+const  perimeterTriangleAction = (dispatch) => {
+    return async (side1,side2,side3) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/geometry/getPerimeterTriangle?side1=${side1}&side2=${side2}&side3=${side3}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const cupsToOuncesAction = (dispatch) => {
-    return async () => {
+const  perimeterCircleAction = (dispatch) => {
+    return async (radius) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/geometry/getPerimeterCircle?radius=${radius}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const pintsToCupsAction = (dispatch) => {
-
-return async () => {
-    try {
-
-    } catch (e) {
-        console.log('expired token')
-        localStorage.removeItem('token');
-        dispatch({ type: 'RESET' });
-
-    }
-}
-}
-
-const cupsToPintsAction = (dispatch) => {
-    return async () => {
-        try {
-
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
-        }
-    }
-}
 
 export const geometryActions = {
-    teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
-    cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
-    ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
-
+    areaRectangleAction, areaTriangleAction, areaCircleAction,  
+    perimeterRectangleAction, perimeterTriangleAction, perimeterCircleAction
 
 }
+
+

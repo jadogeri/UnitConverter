@@ -1,113 +1,156 @@
-const teaspoonsToTablespoonsAction = (dispatch) => {
-    return async () => {
+import api  from "../configs/axios"
+import { ACTION_TYPES } from "../actionTypes/actionTypes"
+
+
+const secondsToMinutesAction = (dispatch) => {
+
+    return async (seconds) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/time/secondsToMinutes?seconds=${seconds}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const tablespoonsToTeaspoonsAction = (dispatch) => {
-    return async () => {
+const secondsToHoursAction = (dispatch) => {
+
+    return async (seconds) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/time/secondsToHours?seconds=${seconds}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
+const secondsToDaysAction = (dispatch) => {
 
-const tablespoonsToCupsAction = (dispatch) => {
-    return async () => {
+    return async (seconds) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/time/secondsToDays?seconds=${seconds}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const cupsToTablespoonsAction = (dispatch) => {
-    return async () => {
+const secondsToYearsAction = (dispatch) => {
+
+    return async (seconds) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/time/secondsToYears?seconds=${seconds}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const ouncesToCupsAction = (dispatch) => {
-    return async () => {
+const minutesToSecondsAction = (dispatch) => {
+
+    return async (minutes) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/time/minutesToSeconds?minutes=${minutes}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const cupsToOuncesAction = (dispatch) => {
-    return async () => {
+const hoursToSecondsAction = (dispatch) => {
+
+    return async (hours) => {
         try {
-   
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/time/hoursToSeconds?hours=${hours}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
 
-const pintsToCupsAction = (dispatch) => {
+const daysToSecondsAction = (dispatch) => {
 
-return async () => {
-    try {
-
-    } catch (e) {
-        console.log('expired token')
-        localStorage.removeItem('token');
-        dispatch({ type: 'RESET' });
-
-    }
-}
-}
-
-const cupsToPintsAction = (dispatch) => {
-    return async () => {
+    return async (days) => {
         try {
-
-        } catch (e) {
-            console.log('expired token')
-            localStorage.removeItem('token');
-            dispatch({ type: 'RESET' });
-
+            const response = await api.get(`/time/daysToSeconds?days=${days}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
         }
+    
     }
 }
+
+const yearsToSecondsAction = (dispatch) => {
+
+    return async (years) => {
+        try {
+            const response = await api.get(`/time/yearsToSeconds?years=${years}`);
+            const result = response.data
+            console.log(result)
+            alert(result)
+            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            return result;
+    
+        } catch (err) {
+            dispatch({ type: 'ERROR', payload: "Something went wrong" })
+        }
+    
+    }
+}
+
 
 export const timeActions = {
-    teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
-    cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
-    ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
-
+    secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction,
+    secondsToYearsAction, daysToSecondsAction, minutesToSecondsAction,
+    hoursToSecondsAction, yearsToSecondsAction
 
 }
+

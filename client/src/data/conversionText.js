@@ -23,25 +23,25 @@ const TEMPERATURE =  {
 
 const TIME = {
     
-    SECONDS_TO_MINUTES : "SECONDS_TO_MINUTES",
-    SECONDS_TO_HOURS : "SECONDS_TO_HOURS",
-    SECONDS_TO_DAYS : "SECONDS_TO_DAYS",
-    SECONDS_TO_YEARS : "SECONDS_TO_YEARS",
-    MINUTES_TO_SECONDS : "MINUTES_TO_SECONDS",
-    HOURS_TO_SECONDS : "HOURS_TO_SECONDS",
-    DAYS_TO_SECONDS : "DAYS_TO_SECONDS",
-    YEARS_TO_SECONDS : "YEARS_TO_SECONDS"  
+    SECONDS_TO_MINUTES : "1 minute = 60 seconds",
+    SECONDS_TO_HOURS : "1 hour = 3600 seconds",
+    SECONDS_TO_DAYS : "1 day = 86400 seconds",
+    SECONDS_TO_YEARS : "1 year = 31,536,000 seconds",
+    MINUTES_TO_SECONDS : "1 minute = 60 seconds",
+    HOURS_TO_SECONDS : "1 hour = 3600 seconds",
+    DAYS_TO_SECONDS : "1 day = 86400 seconds",
+    YEARS_TO_SECONDS : "1 year = 31,536,000 seconds",
 
 }
 
 const GEOMETRY = {
     
-    AREA_OF_RECTANGLE  : "AREA_OF_RECTABLGE",
-    AREA_OF_TRIANGLE  : "AREA_OF_TRIANLGE",
-    AREA_OF_CIRCLE  : "AREA_OF_CIRCLE",
-    PERIMETER_OF_RECTANGLE  : "PERIMETER_OF_RECTABLGE",
-    PERIMETER_OF_TRIANGLE  : "PERIMETER_OF_TRIANLGE",
-    PERIMETER_OF_CIRCLE  : "PERIMETER_OF_CIRCLE"
+    AREA_OF_RECTANGLE  : "area of rectangle = width x length",
+    AREA_OF_TRIANGLE  : "area of triangle = 1/2 x base x height",
+    AREA_OF_CIRCLE  : "area of circle = π x radius x radius",
+    PERIMETER_OF_RECTANGLE  : "perimeter of rectangle = 2 x ( width + length )",
+    PERIMETER_OF_TRIANGLE  : "perimeter of triangle = side1 + side2 + side3",
+    PERIMETER_OF_CIRCLE  : "perimeter of circle = 2 x π x radius"
 
 }
 

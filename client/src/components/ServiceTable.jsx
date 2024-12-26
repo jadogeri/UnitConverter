@@ -36,6 +36,14 @@ const ServiceTable = () => {
 
   }
 
+  function getRandomInt() {
+    let min = 0;
+    let max = 999999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  let randomNumber = getRandomInt();
+  console.log(randomNumber); 
 
 
   return (
@@ -48,8 +56,8 @@ const ServiceTable = () => {
           </div>
       </div>
       <div class="w3-row-padding">
-        <ServiceBoard data={lifespanData} title="LIFESPAN"/>
-        <ServiceBoard data={dailyspanData} title="DAILYSPAN"/>
+        <ServiceBoard data={lifespanData} title="LIFESPAN" key={getRandomInt()}/>
+        <ServiceBoard data={dailyspanData} title="DAILYSPAN" key={getRandomInt()}/>
 
       </div>
     
