@@ -24,10 +24,10 @@ const CollapsibleInput = (props) => {
 
   
     <>
-        <button onClick={()=>{handleAccordion(props.id)}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align">
+        <button onClick={()=>{handleAccordion(props.id, props.service)}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align ">
             {props.title}
         </button>
-        <div id={props.id} className="w3-hide">
+        <div id={props.id} className={`w3-hide ${props.service}`} >
           <div className="w3-container">
             <p>{props.conversionText}</p>
             <div className="w3-container w3-white w3-padding-16">
