@@ -1,11 +1,13 @@
 import React from 'react'
 import { handleAccordion } from '../utils/handleAccordion'
-import { useRef,useState } from 'react'
+import { useRef,useContext,useState } from 'react'
+import { Context } from '../context/APIContext'
 import { useUpdateRecordsMutation } from '../redux/api/record'
 
 const CollapsibleInput = (props) => {
     const [updateRecords] = useUpdateRecordsMutation();
 
+    const { state } = useContext(Context)
     const [output, setOutput] = useState(0.0);
     const inputForm = useRef(null)
     const handleClick = (e) =>{
@@ -39,7 +41,7 @@ const CollapsibleInput = (props) => {
           </div>
           <div className="w3-third">
             <label><i className="fa fa-calendar-o"></i> Result</label>
-            <input className="w3-input w3-border" type="number" placeholder="" name="CheckOut"  value={output} readOnly/>
+            <input className="w3-input w3-border" type="number" placeholder="" name="CheckOut"  value={state.result} readOnly/>
           </div>
           <div className="w3-third">
             <button style={{marginTop:20}} onClick={handleClick}
