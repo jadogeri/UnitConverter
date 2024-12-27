@@ -1,12 +1,14 @@
 import React from 'react'
 import { handleAccordion } from '../utils/handleAccordion'
-import { useRef,useState } from 'react'
+import { useRef, useContext } from 'react'
 import { useUpdateRecordsMutation } from '../redux/api/record'
+import { Context } from '../context/APIContext'
+
 
 const CollapsibleInput = (props) => {
     const [updateRecords] = useUpdateRecordsMutation();
+    const { state } = useContext(Context)
 
-    const [output, setOutput] = useState(0.0);
     const inputForm = useRef(null)
     const handleClick = (e) =>{
         e.preventDefault();
@@ -15,11 +17,10 @@ const CollapsibleInput = (props) => {
         const value3 = inputForm.current.field3.value;
 
 
-        let result = props.handler(parseFloat(value1),parseFloat(value2),parseFloat(value3))
+        props.handler(parseFloat(value1),parseFloat(value2),parseFloat(value3))
         .then(()=>{
           updateRecords({service_name:props.service});
         })
-        setOutput(result);
     }
 
   return (
@@ -51,7 +52,7 @@ const CollapsibleInput = (props) => {
           </div>
           <div className="w3-quarter">
             <label><i className="fa fa-calendar-o"></i>Result</label>
-            <input className="w3-input w3-border" type="number" placeholder="" name="CheckOut"  value={output} readOnly/>
+            <input className="w3-input w3-border" type="number" placeholder="" name="CheckOut"  value={state.result} readOnly/>
           </div>
           
           <div className="w3-row-padding">

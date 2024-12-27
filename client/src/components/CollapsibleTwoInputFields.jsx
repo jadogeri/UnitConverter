@@ -1,6 +1,6 @@
 import React from 'react'
 import { handleAccordion } from '../utils/handleAccordion'
-import { useRef,useContext,useState } from 'react'
+import { useRef,useContext } from 'react'
 import { Context } from '../context/APIContext'
 import { useUpdateRecordsMutation } from '../redux/api/record'
 
@@ -8,18 +8,16 @@ const CollapsibleInput = (props) => {
     const [updateRecords] = useUpdateRecordsMutation();
 
     const { state } = useContext(Context)
-    const [output, setOutput] = useState(0.0);
     const inputForm = useRef(null)
     const handleClick = (e) =>{
         e.preventDefault();
         const value1 = inputForm.current.field1.value;
         const value2 = inputForm.current.field2.value;
 
-        let result = props.handler(parseFloat(value1),parseFloat(value2))
+        props.handler(parseFloat(value1),parseFloat(value2))
         .then(()=>{
           updateRecords({service_name:props.service});
         })
-        setOutput(result);
     }
 
   return (
