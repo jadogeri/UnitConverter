@@ -1,11 +1,8 @@
 import React from 'react'
 import { w3_open } from '../utils/htmlUtil/w3_open';
-import { useNavigate } from 'react-router-dom'
-
 
 const NavBar = () => {
 
-  const auth = JSON.parse(localStorage.getItem("AUTHKEY"));
   return (
     <div style={{backgroundColor :"black"}} >
     <div className="w3-top" style={{backgroundColor :"black"}}>
@@ -16,7 +13,7 @@ const NavBar = () => {
       <a href="/" className="w3-bar-item w3-button w3-wide" style={{backgroundColor :"red"}}
      >
         {/* <img src={require("../assets/villainImages/PredatorHome.jpg")} className="w3-bar-item w3-button w3-wide"  alt="logo"  /> */}
-        logo
+        Home
       </a>
       {/* Right-sided navbar links */}
       <div className="w3-right w3-hide-small tab" style={{backgroundColor :"black"}}>
