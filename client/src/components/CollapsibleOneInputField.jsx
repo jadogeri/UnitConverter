@@ -1,28 +1,37 @@
 import React from 'react'
 import { handleAccordion } from '../utils/handleAccordion'
-import { useRef,useContext } from 'react'
+import { useRef,useContext,useState } from 'react'
 import { Context } from '../context/APIContext'
 import { useUpdateRecordsMutation } from '../redux/api/record'
+import Loader from './Loader.jsx'
+
 
 const CollapsibleInput = (props) => {
     const [updateRecords] = useUpdateRecordsMutation();
-
-    const { state } = useContext(Context)
+    const [delay , setDelay] = useState(false);
+    const { state, resetResultAction } = useContext(Context)
     const inputForm = useRef(null)
+
+
     const handleClick = (e) =>{
         e.preventDefault();
         const value = inputForm.current.input.value;
+        if(value.length > 0 ){
+          setDelay(true);
         props.handler(parseFloat(value))
         .then(()=>{
           updateRecords({service_name:props.service});
         })
+        setDelay(false)
+      }
     }
 
   return (
 
   
     <>
-        <button onClick={()=>{handleAccordion(props.id, props.service)}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align ">
+        <button onClick={()=>{resetResultAction();
+                        handleAccordion(props.id, props.service)}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align ">
             {props.title}
         </button>
         <div id={props.id} className={`w3-hide ${props.service}`}  style={{backgroundColor: "purple"}}>
@@ -39,7 +48,8 @@ const CollapsibleInput = (props) => {
           </div>
           <div className="w3-third">
             <label><i className="fa fa-calendar-o"></i> Result</label>
-            <input className="w3-input w3-border" type="number" placeholder="" name="CheckOut"  value={state.result} readOnly/>
+            {delay?<Loader/>:
+                   <input className="w3-input w3-border" type="number" placeholder="" name="CheckOut"  value={state.result} readOnly/>}
           </div>
           <div className="w3-third">
             <button style={{marginTop:20}} onClick={handleClick}
@@ -55,3 +65,45 @@ const CollapsibleInput = (props) => {
 }
 
 export default CollapsibleInput
+
+
+/**
+ * 
+ import Loader from './Loader.jsx'
+ 
+ const ServiceTable = () => {
+   const {  state } = useContext(ServiceContext)
+   const { data, isLoading,isSuccess } = useFetchRecordsQuery()
+   const [delay , setDelay] = useState(true);
+ 
+   const [dailyspanData, setDailyspanData] = useState([])
+   const [lifespanData, setLifespanData] = useState([])
+   useEffect(()=>{
+     handleLoadRecords()
+     setTimeout(()=>{
+       setDelay(false)
+     },3000)
+     
+   },[data])
+ 
+   const handleLoadRecords = ()=>{
+     
+     try{
+       if(isSuccess){
+         console.log(data)
+  
+         data.data.map((item)=>{
+           const {d_name,d_total,l_name,l_total} = item
+           //prevArray => [...prevArray, newObject
+           setDailyspanData(prevArray => [...prevArray, {name : d_name,total : d_total}]);
+           setLifespanData(prevArray => [...prevArray, {name : l_name,total : l_total}]);
+         })
+
+             {   delay && <Loader/>}
+      {   !delay && (        <>  
+                       <ServiceBoard data={lifespanData} title="LIFESPAN" key={getRandomInt()}/>
+                       <ServiceBoard data={dailyspanData} title="DAILYSPAN" key={getRandomInt()}/>
+                    </>     )}
+ 
+       }
+ */

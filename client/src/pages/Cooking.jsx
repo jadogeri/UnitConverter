@@ -7,7 +7,6 @@ import Spacer from '../components/Spacer'
 
 
 const Cooking = () => {
-  const [data, setData]= useState(0);
 const [state,teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
       cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
       ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
@@ -22,7 +21,7 @@ const handleAction = (teaspoons)=>{
     <>
     <Spacer marginTop={40} marginBottom={40}/>
 
-    <div id='cooking'>Cooking</div>
+    <div id='cooking'></div>
     <hr/>
 
 
@@ -33,6 +32,14 @@ const handleAction = (teaspoons)=>{
 <CollapsibleOneInput title="Convert Teaspoons to Tablespoons" id="cooking2"
                   conversionText={CONVERSION_TYPES.COOKING.TEASPOONS_TO_TABLESPOONS}
                   handler={teaspoonsToTablespoonsAction} service="cooking"
+/>
+<CollapsibleOneInput title="Convert Cups to Tablespoons" id="cooking7"
+                  conversionText={CONVERSION_TYPES.COOKING.CUPS_TO_TABLESPOONS}
+                  handler={cupsToTablespoonsAction} service="cooking"
+/>
+<CollapsibleOneInput title="Convert Tablespoons to Cups" id="cooking8"
+                  conversionText={CONVERSION_TYPES.COOKING.TABLESPOONS_TO_CUPS}
+                  handler={tablespoonsToCupsAction} service="cooking"
 />
 
 <CollapsibleOneInput title="Convert Cups to Pints" id="cooking3"
@@ -52,14 +59,7 @@ const handleAction = (teaspoons)=>{
                   conversionText={CONVERSION_TYPES.COOKING.OUNCES_TO_CUPS}
                   handler={ouncesToCupsAction} service="cooking"
 />
-<CollapsibleOneInput title="Convert Cups to Tablespoons" id="cooking7"
-                  conversionText={CONVERSION_TYPES.COOKING.CUPS_TO_TABLESPOONS}
-                  handler={cupsToTablespoonsAction} service="cooking"
-/>
-<CollapsibleOneInput title="Convert Tablespoons to Cups" id="cooking8"
-                  conversionText={CONVERSION_TYPES.COOKING.TABLESPOONS_TO_CUPS}
-                  handler={tablespoonsToCupsAction} service="cooking"
-/>
+
 <Spacer marginTop={40} marginBottom={40}/>
   </>
   )

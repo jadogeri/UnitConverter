@@ -9,7 +9,7 @@ const APICard = (props) => {
       <img src={props.src} alt="Dan" style={{width:"100%"}}/>
       <div class="w3-container">
         <h3>{props.label}</h3>
-        <p class="w3-opacity">{props.label}</p>
+        <p class="w3-opacity"></p>
         <p>{props.description}</p>
         <p><button onClick={()=>{navigate(`/${props.route}`)}}
         

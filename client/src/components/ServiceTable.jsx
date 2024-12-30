@@ -2,15 +2,20 @@ import React, {useContext, useEffect, useState} from 'react'
 import ServiceBoard from './ServiceBoard.jsx'
 import { Context as ServiceContext } from '../context/APIContext.js'
 import { useFetchRecordsQuery } from '../redux/api/record.js'
+import Loader from './Loader.jsx'
 
 const ServiceTable = () => {
   const {  state } = useContext(ServiceContext)
-  const { data, isError,isLoading,isFetching,isSuccess,isUninitialized } = useFetchRecordsQuery()
+  const { data, isLoading,isSuccess } = useFetchRecordsQuery()
+  const [delay , setDelay] = useState(true);
 
   const [dailyspanData, setDailyspanData] = useState([])
   const [lifespanData, setLifespanData] = useState([])
   useEffect(()=>{
     handleLoadRecords()
+    setTimeout(()=>{
+      setDelay(false)
+    },3000)
     
   },[data])
 
@@ -51,13 +56,18 @@ const ServiceTable = () => {
       <div>
           <hr/>
           <div class="w3-center">
-            <h2>Color Themes</h2>
-            <p>The color themes have been designed to work harmoniously with each other.</p>
+            <h2>API CALLS</h2>
+            <p>API calls logged in the tables below</p>
           </div>
       </div>
       <div class="w3-row-padding">
-        <ServiceBoard data={lifespanData} title="LIFESPAN" key={getRandomInt()}/>
-        <ServiceBoard data={dailyspanData} title="DAILYSPAN" key={getRandomInt()}/>
+      {   delay && <Loader/>}
+      {   !delay && (        <>  
+                       <ServiceBoard data={lifespanData} title="LIFESPAN" key={getRandomInt()}/>
+                       <ServiceBoard data={dailyspanData} title="DAILYSPAN" key={getRandomInt()}/>
+                    </>     )}
+
+      
 
       </div>
     

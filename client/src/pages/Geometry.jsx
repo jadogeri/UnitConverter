@@ -6,7 +6,6 @@ import CollapsibleThreeInputFields from '../components/CollapsibleThreeInputFiel
 import { CONVERSION_TYPES } from '../data/conversionText'
 import Spacer from '../components/Spacer'
 import useGeometry from '../hooks/useGeometry'
-import ResetCollapsibleButton from '../components/ResetCollapsibleButton'
 
 
 const Geometry = () => {
@@ -20,12 +19,9 @@ const [state,   areaRectangleAction, areaTriangleAction, areaCircleAction,
     <>
     <Spacer marginTop={40} marginBottom={40}/>
 
-    <div id='geometry'>Temperature</div>
+    <div id='geometry'></div>
     <hr/>
-<div>{JSON.stringify(state)}</div>
 
-<ResetCollapsibleButton title="Close All tabs" id="geometry0"      service="geometry" 
-/>
 <CollapsibleTwoInputFields title="Calculate Area of Rectangle" id="geometry1"
                   conversionText={CONVERSION_TYPES.GEOMETRY.AREA_OF_RECTANGLE}
                   handler={areaRectangleAction} service="geometry" field1="Width" field2="length"

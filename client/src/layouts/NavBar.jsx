@@ -15,26 +15,25 @@ const NavBar = () => {
       <div className="w3-right w3-hide-small tab" style={{backgroundColor :"black"}}>
       <a href="/time" className="w3-bar-item w3-button tablinks" style={{backgroundColor :"green"}}
        >
-         <i className="fa fa-gamepad" style={{backgroundColor :"green"}}/> TIME
+         <i style={{backgroundColor :"green"}}/> TIME
         </a>
         <a href="/temperature" className="w3-bar-item w3-button tablinks" style={{backgroundColor :"green"}}
         >
-           <i className="fa fa-regular fa-exclamation" style={{backgroundColor :"green"}}/>TEMPERATURE
+           <i  style={{backgroundColor :"green"}}/>TEMPERATURE
         </a>
 
         <a href="/geometry" className="w3-bar-item w3-button tablinks" style={{backgroundColor :"green"}}
         >
-          <i className="fa fa-th" style={{backgroundColor :"green"}}/> GEOMETRY
+          <i style={{backgroundColor :"green"}}/> GEOMETRY
         </a>
         <a href="/cooking" className="w3-bar-item w3-button tablinks" style={{backgroundColor :"green"}}
         >
-          <i className="fa fa-envelope" style={{backgroundColor :"green"}} /> COOKING
+          <i style={{backgroundColor :"green"}} /> COOKING
         </a>
     
       </div>
       {/* Hide right-floated links on small screens and replace them with a menu icon */}
       <a
-        //href="javascript:void(0)"
         className="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
         onClick={()=>{w3_open()}}
       >

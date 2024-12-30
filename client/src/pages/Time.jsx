@@ -20,7 +20,7 @@ const [state,  secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction
     <>
     <Spacer marginTop={40} marginBottom={40}/>
 
-    <div id='time'>Time</div>
+    <div id='time'></div>
     <hr/>
 
 
@@ -28,6 +28,7 @@ const [state,  secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction
                   conversionText={CONVERSION_TYPES.TIME.SECONDS_TO_MINUTES}
                   handler={secondsToMinutesAction} service="time"
 />
+
 <CollapsibleOneInput title="Convert Seconds to Hours" id="time2"
                   conversionText={CONVERSION_TYPES.TIME.SECONDS_TO_HOURS}
                   handler={secondsToHoursAction} service="time"

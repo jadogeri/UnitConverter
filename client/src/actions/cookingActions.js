@@ -8,7 +8,7 @@ const teaspoonsToTablespoonsAction = (dispatch) => {
             const response = await api.get(`/cooking/teaspoonsToTablespoons?teaspoons=${teaspoons}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -24,7 +24,7 @@ const tablespoonsToTeaspoonsAction = (dispatch) => {
             const response = await api.get(`/cooking/tablespoonsToTeaspoons?tablespoons=${tablespoons}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload: result})
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result})
             return result
     
         } catch (err) {
@@ -42,7 +42,7 @@ const tablespoonsToCupsAction = (dispatch) => {
             const response = await api.get(`/cooking/tablespoonsToCups?tablespoons=${tablespoons}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
     
         } catch (err) {
             dispatch({ type: 'ERROR', payload: "Something went wrong" })
@@ -57,7 +57,7 @@ const cupsToTablespoonsAction = (dispatch) => {
             const response = await api.get(`/cooking/cupsToTablespoons?cups=${cups}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload: result})
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result})
     
         } catch (err) {
             dispatch({ type: 'ERROR', payload: "Something went wrong" })
@@ -72,7 +72,7 @@ const ouncesToCupsAction = (dispatch) => {
             const response = await api.get(`/cooking/ouncesToCups?ounces=${ounces}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload:result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload:result })
     
         } catch (err) {
             dispatch({ type: 'ERROR', payload: "Something went wrong" })
@@ -88,7 +88,7 @@ const cupsToOuncesAction = (dispatch) => {
             const response = await api.get(`/cooking/cupsToOunces?cups=${cups}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
     
         } catch (err) {
             dispatch({ type: 'ERROR', payload: "Something went wrong" })
@@ -104,7 +104,7 @@ const pintsToCupsAction = (dispatch) => {
             const response = await api.get(`/cooking/pintsToCups?pints=${pints}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload: result})
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result})
     
         } catch (err) {
             dispatch({ type: 'ERROR', payload: "Something went wrong" })
@@ -119,7 +119,7 @@ const cupsToPintsAction = (dispatch) => {
             const response = await api.get(`/cooking/cupsToPints?cups=${cups}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.COOKING, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
     
         } catch (err) {
             dispatch({ type: 'ERROR', payload: "Something went wrong" })

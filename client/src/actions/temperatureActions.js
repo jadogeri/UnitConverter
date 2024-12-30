@@ -8,8 +8,7 @@ const celciusToFahrenheitAction = (dispatch) => {
             const response = await api.get(`/temperature/celciusToFahrenheit?celcius=${celcius}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -25,7 +24,7 @@ const celciusToKelvinAction = (dispatch) => {
             const response = await api.get(`/temperature/celciusToKelvin?celcius=${celcius}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result})
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result})
             return result
     
         } catch (err) {
@@ -42,8 +41,7 @@ const kelvinToFahrenheitAction = (dispatch) => {
             const response = await api.get(`/temperature/kelvinToFahrenheit?kelvin=${kelvin}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -59,7 +57,7 @@ const fahrenheitToKelvinAction = (dispatch) => {
             const response = await api.get(`/temperature/fahrenheitToKelvin?fahrenheit=${fahrenheit}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result})
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result})
             return result
     
         } catch (err) {
@@ -76,8 +74,7 @@ const kelvinToCelciusAction = (dispatch) => {
             const response = await api.get(`/temperature/kelvinToCelcius?kelvin=${kelvin}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -93,7 +90,7 @@ const fahrenheitToCelciusAction = (dispatch) => {
             const response = await api.get(`/temperature/fahrenheitToCelcius?fahrenheit=${fahrenheit}`);
             const result = response.data
             console.log(result)
-            dispatch({ type: ACTION_TYPES.TEMPERATURE, payload: result})
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result})
             return result
     
         } catch (err) {

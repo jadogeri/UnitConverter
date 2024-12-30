@@ -4,10 +4,11 @@ import { temperatureActions } from "../actions/temperatureActions";
 import { timeActions } from "../actions/timeActions";
 import { geometryActions } from "../actions/geometryActions";
 import { APIReducer } from "../reducers/APIReducer";
-const initialState = { cooking : 0, temperature: 0, time : 0, geometry: 0, isLoading: true,  result : 0}
+import { resetResultAction } from "../actions/resetAction";
+const initialState = { isLoading: true,  result : 0}
 
 export const { Provider, Context } = createDataContext(
     APIReducer,
-    {  ...cookingActions, ...temperatureActions, ...timeActions, ...geometryActions},
+    {  ...cookingActions, ...temperatureActions, ...timeActions, ...geometryActions, resetResultAction},
     initialState
 );

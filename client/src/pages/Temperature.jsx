@@ -16,9 +16,8 @@ const [state,kelvinToCelciusAction, kelvinToFahrenheitAction,celciusToFahrenheit
     <>
     <Spacer marginTop={40} marginBottom={40}/>
 
-    <div id='temperature'>Temperature</div>
+    <div id='temperature'></div>
     <hr/>
-<div>{JSON.stringify(state)}</div>
 
 <CollapsibleOneInputField title="Convert Celcius to Kelvin" id="temperature1"
                   conversionText={CONVERSION_TYPES.TEMPERATURE.CELCIUS_TO_KELVIN}

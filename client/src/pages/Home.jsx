@@ -13,13 +13,13 @@ const Home = () => {
           <p class="w3-center w3-large">Quickly convert to preferred unit easily</p>
           <div class="w3-row-padding w3-grayscale" style={{marginTop:64}}>
 
-              <APICard src="https://www.w3schools.com/w3images/team4.jpg"
+              <APICard src="./api.jpg"
                           label="TEMPERATURE" route="temperature" />
-              <APICard src="https://www.w3schools.com/w3images/team4.jpg"
+              <APICard src="./api.jpg"
                           label="GEOMETRY" route="geometry" />
-              <APICard src="https://www.w3schools.com/w3images/team4.jpg"
+              <APICard src="./api.jpg"
                           label="COOKING" route="cooking" />
-              <APICard src="https://www.w3schools.com/w3images/team4.jpg"
+              <APICard src="./api.jpg"
                           label="TIME" route="time" />
             
               <hr/>

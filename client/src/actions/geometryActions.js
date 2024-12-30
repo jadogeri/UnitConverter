@@ -8,8 +8,7 @@ const areaRectangleAction = (dispatch) => {
             const response = await api.get(`/geometry/getAreaRectangle?width=${width}&length=${length}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -25,8 +24,7 @@ const areaTriangleAction = (dispatch) => {
             const response = await api.get(`/geometry/getAreaTriangle?base=${base}&height=${height}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -43,8 +41,7 @@ const areaCircleAction = (dispatch) => {
             const response = await api.get(`/geometry/getAreaCircle?radius=${radius}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -60,8 +57,7 @@ const perimeterRectangleAction = (dispatch) => {
             const response = await api.get(`/geometry/getPerimeterRectangle?width=${width}&length=${length}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -77,8 +73,7 @@ const  perimeterTriangleAction = (dispatch) => {
             const response = await api.get(`/geometry/getPerimeterTriangle?side1=${side1}&side2=${side2}&side3=${side3}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -94,8 +89,7 @@ const  perimeterCircleAction = (dispatch) => {
             const response = await api.get(`/geometry/getPerimeterCircle?radius=${radius}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.GEOMETRY, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {

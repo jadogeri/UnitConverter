@@ -9,8 +9,7 @@ const secondsToMinutesAction = (dispatch) => {
             const response = await api.get(`/time/secondsToMinutes?seconds=${seconds}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -27,8 +26,7 @@ const secondsToHoursAction = (dispatch) => {
             const response = await api.get(`/time/secondsToHours?seconds=${seconds}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -45,8 +43,7 @@ const secondsToDaysAction = (dispatch) => {
             const response = await api.get(`/time/secondsToDays?seconds=${seconds}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -63,8 +60,7 @@ const secondsToYearsAction = (dispatch) => {
             const response = await api.get(`/time/secondsToYears?seconds=${seconds}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -81,8 +77,7 @@ const minutesToSecondsAction = (dispatch) => {
             const response = await api.get(`/time/minutesToSeconds?minutes=${minutes}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -99,8 +94,7 @@ const hoursToSecondsAction = (dispatch) => {
             const response = await api.get(`/time/hoursToSeconds?hours=${hours}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -117,8 +111,7 @@ const daysToSecondsAction = (dispatch) => {
             const response = await api.get(`/time/daysToSeconds?days=${days}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
@@ -135,8 +128,7 @@ const yearsToSecondsAction = (dispatch) => {
             const response = await api.get(`/time/yearsToSeconds?years=${years}`);
             const result = response.data
             console.log(result)
-            alert(result)
-            dispatch({ type: ACTION_TYPES.TIME, payload: result })
+            dispatch({ type: ACTION_TYPES.UPDATE, payload: result })
             return result;
     
         } catch (err) {
