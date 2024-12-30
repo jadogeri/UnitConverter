@@ -32,7 +32,7 @@ This is a REST API ,which stores user seesion in an embedded database (lowdb)
           <li><a href="#21-system-objectives">2.1 System Objectives</a> </li>
           <li><a href="#22-user-types">2.2 User Typres</a> </li>
           <li><a href="#23-assumptions-and-constraints">2.3 Assumptions and Constraints</a> </li>
-          <li><a href="#24-system-context-diagram">2.4 Context Diagram</a> </li>
+          <li><a href="#24-system-context-diagram">2.4 System Context Diagram</a> </li>
         </ul>
       </li>
     </ul>
