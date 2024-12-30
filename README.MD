@@ -55,26 +55,33 @@ This is a REST API ,which stores user seesion in an embedded database (lowdb)
       </li>
     </ul> 
     <ul>
-      <li><a href="#4-data-design">5. Installation</a>
-        <ul>
-          <li><a href="#41-data-entities-and-relationships">4.1 Entities and Relationships</a> </li>
-          <li><a href="#42-database-conceptual-schema">4.2 Database Conceptual Schema</a> </li>
-          <li><a href="#33-deployment-artifacts">3.3 Deployment Artifacts</a> </li>
-        </ul>
+      <li><a href="#5-installation">5. Installation</a>
       </li>
     </ul> 
+    <ul>
+        <li><a href="#6-usage">6. Usage</a>
+        <ul>
+            <li><a href="#61-run-locally">6.1 Run Locally</a> </li>
+        </ul>
+        </li>
+    </ul> 
+    <ul>
+        <li><a href="#7-api-documentation">7. API Documentation</a>
+        </li> 
+    </ul> 
+    <ul>
+        <li><a href="#8-tests">8. Tests</a>
+        </li>
+    </ul>    
+    <ul>    
+        <li><a href="#9-license">9. License</a>
+        </li>
+    </ul> 
+    <ul> 
+        <li><a href="#10-references">8. References</a>
+        </li>
+    <ul>
     
-
-
-- [Installation](#installation)
-- [Usage](#usage)
-    -[Run Locally](#run-locally)
-- [API Documentation](api-documentation)
-- [Tests](#tests)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
-
-
 
 ## **1. Introduction**  
 ### **1.1 Purpose**  
@@ -162,13 +169,21 @@ The system follows a **three-tier architecture**:
 ---
 
 ## **6. Usage**  
+### **6.1 Run Locally**
+
 
 ---
 ## **7. API Documentation**  
 
 ---
+## **8. Tests**  
 
-## **7. References**
+---
+## **9. License**  
+
+---
+
+## **10. References**
 
 * Core JavaServer Faces 3rd Edition - *David Geary & Cay Hortsmann* - Pretince Hall
 * Java EE 7 Essentials - *Arun Gupta* - O'Reilly
