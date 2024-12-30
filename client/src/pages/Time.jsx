@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import React from 'react'
 import useTime from '../hooks/useTime'
 import CollapsibleOneInput from '../components/CollapsibleOneInputField'
@@ -7,8 +6,7 @@ import Spacer from '../components/Spacer'
 
 
 const Time = () => {
-  const [data, setData]= useState(0);
-const [state,  secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction,
+const [ secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction,
         secondsToYearsAction, daysToSecondsAction, minutesToSecondsAction,
         hoursToSecondsAction, yearsToSecondsAction
 
@@ -22,7 +20,9 @@ const [state,  secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction
 
     <div id='time'></div>
     <hr/>
-
+    <div style={{   margin:45,   backgroundColor:"#484464"}}>
+    <h3 style={{alignSelf:"center",display:"flex",justifyContent:"center",color:"white"}}>TIME</h3>
+<div style={{   margin:45,  backgroundColor:"green"}}>
 
 <CollapsibleOneInput title="Convert Seconds to Minutes" id="time1"
                   conversionText={CONVERSION_TYPES.TIME.SECONDS_TO_MINUTES}
@@ -58,6 +58,8 @@ const [state,  secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction
                   conversionText={CONVERSION_TYPES.TIME.YEARS_TO_SECONDS}
                   handler={yearsToSecondsAction} service="time"
 />
+</div>
+</div>
 
 <Spacer marginTop={40} marginBottom={40}/>
   </>

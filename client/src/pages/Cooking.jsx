@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import React from 'react'
 import useCooking from '../hooks/useCooking'
 import CollapsibleOneInput from '../components/CollapsibleOneInputField'
@@ -7,16 +6,12 @@ import Spacer from '../components/Spacer'
 
 
 const Cooking = () => {
-const [state,teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
+const [teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
       cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
       ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
   
 ] = useCooking();
 
-const handleAction = (teaspoons)=>{
-  alert(`teaspoon in handle action === ${teaspoons}`)
-  teaspoonsToTablespoonsAction(teaspoons)
-}
   return (
     <>
     <Spacer marginTop={40} marginBottom={40}/>
@@ -24,7 +19,9 @@ const handleAction = (teaspoons)=>{
     <div id='cooking'></div>
     <hr/>
 
-
+    <div style={{   margin:45,   backgroundColor:"#484464"}}>
+    <h3 style={{alignSelf:"center",display:"flex",justifyContent:"center",color:"white"}}>COOKING</h3>
+<div style={{   margin:45,  backgroundColor:"green"}}>
 <CollapsibleOneInput title="Convert Tablespoons to Teaspoons" id="cooking1"
                   conversionText={CONVERSION_TYPES.COOKING.TABLESPOONS_TO_TEASPOONS}
                   handler={tablespoonsToTeaspoonsAction} service="cooking"
@@ -59,7 +56,8 @@ const handleAction = (teaspoons)=>{
                   conversionText={CONVERSION_TYPES.COOKING.OUNCES_TO_CUPS}
                   handler={ouncesToCupsAction} service="cooking"
 />
-
+</div>
+</div>
 <Spacer marginTop={40} marginBottom={40}/>
   </>
   )

@@ -30,13 +30,14 @@ const CollapsibleInput = (props) => {
 
   
     <>
-        <button onClick={()=>{resetResultAction();
+         <div style={{borderColor:"white",borderWidth:1}}>
+        <button  style={{color:"white"}} onClick={()=>{resetResultAction();
                         handleAccordion(props.id, props.service)}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align ">
             {props.title}
         </button>
-        <div id={props.id} className={`w3-hide ${props.service}`}  style={{backgroundColor: "purple"}}>
+        <div id={props.id} className={`w3-hide ${props.service}`}  style={{backgroundColor: "red"}}>
           <div className="w3-container">
-            <p>{props.conversionText}</p>
+            <p  style={{color:"white"}}>{props.conversionText}</p>
             <div className="w3-container w3-white w3-padding-16">
 
 
@@ -53,12 +54,13 @@ const CollapsibleInput = (props) => {
           </div>
           <div className="w3-third">
             <button style={{marginTop:20}} onClick={handleClick}
-            className="w3-button w3-dark-grey" type="submit"><i className="fa fa-search w3-margin-right"></i> Search availability</button>
+            className="w3-button w3-dark-grey" type="submit"><i className="fa fa-search w3-margin-right"></i>Get Result</button>
             </div>
         </div>
       </form>
     </div>
   </div>
+          </div>
           </div>
     </>
   )
@@ -67,43 +69,3 @@ const CollapsibleInput = (props) => {
 export default CollapsibleInput
 
 
-/**
- * 
- import Loader from './Loader.jsx'
- 
- const ServiceTable = () => {
-   const {  state } = useContext(ServiceContext)
-   const { data, isLoading,isSuccess } = useFetchRecordsQuery()
-   const [delay , setDelay] = useState(true);
- 
-   const [dailyspanData, setDailyspanData] = useState([])
-   const [lifespanData, setLifespanData] = useState([])
-   useEffect(()=>{
-     handleLoadRecords()
-     setTimeout(()=>{
-       setDelay(false)
-     },3000)
-     
-   },[data])
- 
-   const handleLoadRecords = ()=>{
-     
-     try{
-       if(isSuccess){
-         console.log(data)
-  
-         data.data.map((item)=>{
-           const {d_name,d_total,l_name,l_total} = item
-           //prevArray => [...prevArray, newObject
-           setDailyspanData(prevArray => [...prevArray, {name : d_name,total : d_total}]);
-           setLifespanData(prevArray => [...prevArray, {name : l_name,total : l_total}]);
-         })
-
-             {   delay && <Loader/>}
-      {   !delay && (        <>  
-                       <ServiceBoard data={lifespanData} title="LIFESPAN" key={getRandomInt()}/>
-                       <ServiceBoard data={dailyspanData} title="DAILYSPAN" key={getRandomInt()}/>
-                    </>     )}
- 
-       }
- */

@@ -31,14 +31,15 @@ const CollapsibleInput = (props) => {
 
   
     <>
-        <button onClick={()=>{resetResultAction();
+        <div style={{borderColor:"white",borderWidth:1}}>
+        <button style={{color:"white"}} onClick={()=>{resetResultAction();
           
           handleAccordion(props.id, props.service)}} className="w3-padding-16 w3-theme w3-button w3-block w3-left-align ">
             {props.title}
         </button>
-        <div id={props.id} className={`w3-hide ${props.service}`} >
+        <div id={props.id} className={`w3-hide ${props.service}`}  style={{backgroundColor: "red"}} >
           <div className="w3-container">
-            <p>{props.conversionText}</p>
+            <p style={{color:"white"}}>{props.conversionText}</p>
             <div className="w3-container w3-white w3-padding-16">
 
 
@@ -57,15 +58,16 @@ const CollapsibleInput = (props) => {
             {delay?<Loader/>:
                    <input className="w3-input w3-border" type="number" placeholder="" name="CheckOut"  value={state.result} readOnly/>}
            </div>
-          <div className="w3-quarter">
-            <button style={{marginTop:20}} onClick={handleClick}
-            className="w3-button w3-dark-grey" type="submit"><i className="fa fa-search w3-margin-right"></i> Search availability</button>
+          <div className="w3-quarter w3-flex">
+            <button style={{marginTop:20,display:"flex"}} onClick={handleClick}
+            className="w3-button w3-dark-grey w3-flex" type="submit"><i className="fa fa-search w3-margin-right w3-flex"></i> Get Result</button>
             </div>
  
         </div>
       </form>
     </div>
   </div>
+          </div>
           </div>
     </>
   )

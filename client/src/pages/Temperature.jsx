@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import React from 'react'
 import useTemperature from '../hooks/useTemperature'
 import CollapsibleOneInputField from '../components/CollapsibleOneInputField'
@@ -7,8 +6,7 @@ import Spacer from '../components/Spacer'
 
 
 const Temperature = () => {
-  const [data, setData]= useState(0);
-const [state,kelvinToCelciusAction, kelvinToFahrenheitAction,celciusToFahrenheitAction,
+const [kelvinToCelciusAction, kelvinToFahrenheitAction,celciusToFahrenheitAction,
   celciusToKelvinAction,fahrenheitToCelciusAction,fahrenheitToKelvinAction]
    = useTemperature();
 
@@ -18,7 +16,9 @@ const [state,kelvinToCelciusAction, kelvinToFahrenheitAction,celciusToFahrenheit
 
     <div id='temperature'></div>
     <hr/>
-
+    <div style={{   margin:45,   backgroundColor:"#484464"}}>
+    <h3 style={{alignSelf:"center",display:"flex",justifyContent:"center",color:"white"}}>TEMPERATURE</h3>
+<div style={{   margin:45,  backgroundColor:"green"}}>
 <CollapsibleOneInputField title="Convert Celcius to Kelvin" id="temperature1"
                   conversionText={CONVERSION_TYPES.TEMPERATURE.CELCIUS_TO_KELVIN}
                   handler={celciusToKelvinAction} service="temperature"
@@ -43,7 +43,8 @@ const [state,kelvinToCelciusAction, kelvinToFahrenheitAction,celciusToFahrenheit
                   conversionText={CONVERSION_TYPES.TEMPERATURE.FAHRENHEIT_TO_CELCIUS}
                   handler={fahrenheitToCelciusAction} service="temperature"
 />
-
+</div>
+</div>
 <Spacer marginTop={40} marginBottom={40}/>
   </>
   )

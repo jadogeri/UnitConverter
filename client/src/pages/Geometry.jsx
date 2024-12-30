@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import React from 'react'
 import CollapsibleOneInputField from '../components/CollapsibleOneInputField'
 import CollapsibleTwoInputFields from '../components/CollapsibleTwoInputFields'
@@ -9,8 +8,7 @@ import useGeometry from '../hooks/useGeometry'
 
 
 const Geometry = () => {
-  const [data, setData]= useState(0);
-const [state,   areaRectangleAction, areaTriangleAction, areaCircleAction,  
+const [areaRectangleAction, areaTriangleAction, areaCircleAction,  
   perimeterRectangleAction, perimeterTriangleAction, perimeterCircleAction
 ]
    = useGeometry();
@@ -21,7 +19,9 @@ const [state,   areaRectangleAction, areaTriangleAction, areaCircleAction,
 
     <div id='geometry'></div>
     <hr/>
-
+    <div style={{   margin:45,   backgroundColor:"#484464"}}>
+    <h3 style={{alignSelf:"center",display:"flex",justifyContent:"center",color:"white"}}>GEOMETRY</h3>
+<div style={{   margin:45,  backgroundColor:"green"}}>
 <CollapsibleTwoInputFields title="Calculate Area of Rectangle" id="geometry1"
                   conversionText={CONVERSION_TYPES.GEOMETRY.AREA_OF_RECTANGLE}
                   handler={areaRectangleAction} service="geometry" field1="Width" field2="length"
@@ -46,7 +46,8 @@ const [state,   areaRectangleAction, areaTriangleAction, areaCircleAction,
                   conversionText={CONVERSION_TYPES.GEOMETRY.PERIMETER_OF_CIRCLE}
                   handler={perimeterCircleAction} service="geometry"
 />
-
+</div>
+</div>
 <Spacer marginTop={40} marginBottom={40}/>
   </>
   )
