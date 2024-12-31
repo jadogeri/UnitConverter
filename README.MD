@@ -155,15 +155,6 @@ The system follows a **three-tier architecture**:
 ![Unit Converter Conceptual Diagram](<designs/conceptualdiagram.png>)
 
 ---
-
-- [Installation](#installation)
-- [Usage](#usage)
-    -[Run Locally](#run-locally)
-- [API Documentation](api-documentation)
-- [Tests](#tests)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
-
 ## **5. Installation**  
 
 ---
@@ -178,15 +169,40 @@ The system follows a **three-tier architecture**:
 ---
 ## **8. Tests**  
 
+1. Navigate to project src folder entering command cd UnitConverter/server.
+
+```bash
+  cd /UnitConverter/server
+```
+2. Type command pip install -r requirements.txt, then press Enter. 
+
+```bash
+  pip install -r requirements.txt
+```
+3. Navigate to tests directory using cd testscommand. 
+
+```bash
+  cd tests
+```
+4. Type command python tests.py to run all tests. 
+
+```bash
+  python tests.py
+```
+![tests](assets/images/tests.png)
+
 ---
 ## **9. License**  
+
+[LICENSE](/LICENSE)
 
 ---
 
 ## **10. References**
 
-* Core JavaServer Faces 3rd Edition - *David Geary & Cay Hortsmann* - Pretince Hall
-* Java EE 7 Essentials - *Arun Gupta* - O'Reilly
-* Docker Deep Dive: Zero to Docker in a single book - *Nigel Poulton*
-* Maven: The Definitive Guide - *Sonatype* - O'Reilly
-* [Prime Faces - Ultimate UI Framework](https://www.primefaces.org/)
+* FreeCodeCamp : [Frontend Web Development: In-Depth Project Tutorial (HTML, CSS, JavaScript, TypeScript, React)](https://www.youtube.com/watch?v=MsnQ5uepIa).
+* Dipesh Malvia : [Learn Node.js & Express with Project in 2 Hours](https://www.youtube.com/watch?v=H9M02of22z4&t=140s).
+* HuXn WebDev : [Mastering Redux Toolkit and RTK Query: A Comprehensive Course for State Management & Data Fetching](https://www.youtube.com/watch?v=CI8VeG0GI-M&t=186s).
+* An Insightful Techie : [Unit Testing in Python using unittest framework - Basic Introduction and How to Write Tests](https://www.youtube.com/watch?v=HKTyOUx9Wf4&t=363s).
+* Caleb Curry : [Python Programming 53 - Sys.path and Changing Module Paths](https://www.youtube.com/watch?v=5z5nALNandM).
+* FreeCodeCamp : [Learn Python - Full Course for Beginners [Tutorial]](https://www.youtube.com/watch?v=rfscVS0vtbw).
