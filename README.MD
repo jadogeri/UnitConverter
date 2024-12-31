@@ -62,23 +62,23 @@ This is a REST API ,which stores user seesion in an embedded database (lowdb)
         <li><a href="#6-usage">6. Usage</a>
         <ul>
             <li><a href="#61-run-locally">6.1 Run Locally</a> </li>
+            <ul>
+              <li><a href="#611-run-server-flask-application">6.1.1 Server (Flask Application)</a> </li>
+              <li><a href="#612-run-client-reactjs-application">6.1.2 Client (ReactJS Application)</a> </li>
+            </ul>
         </ul>
         </li>
     </ul> 
     <ul>
-        <li><a href="#7-api-documentation">7. API Documentation</a>
-        </li> 
-    </ul> 
-    <ul>
-        <li><a href="#8-tests">8. Tests</a>
+        <li><a href="#7-tests">7. Tests</a>
         </li>
     </ul>    
     <ul>    
-        <li><a href="#9-license">9. License</a>
+        <li><a href="#8-license">8. License</a>
         </li>
     </ul> 
     <ul> 
-        <li><a href="#10-references">8. References</a>
+        <li><a href="#9-references">9. References</a>
         </li>
     <ul>
     
@@ -124,8 +124,6 @@ The system follows a **three-tier architecture**:
 2. **Application Layer**: Implements business logic that manages the reading and writing of user input to the **Data Layer**.
 3. **Data Layer**: Handles storage and retrieval of user data.
 
-![OPOPPR Tiers](<diagrams/OPOPPR - Tiers.jpg>)
-
 ### **3.2 Technology Stack**  
 - **Programming Languages**: Python, JavaScript, HTML, CSS and SQL
 - **IDE**: Visual Studio Code (VSCode)
@@ -156,18 +154,69 @@ The system follows a **three-tier architecture**:
 
 ---
 ## **5. Installation**  
+* [Download and install Python](https://www.python.org/downloads/)
+* [Download and install NodeJS](https://nodejs.org/en/download)
+* [Download and install Pip](https://pip.pypa.io/en/stable/installation/)
 
 ---
 
 ## **6. Usage**  
 ### **6.1 Run Locally**
 
+1 Open command prompt or terminal.
+
+2 Type command git clone https://github.com/jadogeri/UnitConverter.git then press enter.
+
+```bash
+  git clone https://github.com/jadogeri/UnitConverter.git
+```
+
+3 Enter command cd UnitConverter then press enter.
+
+```bash
+  cd UnitConverter
+```
+
+#### **6.1.1 Run Server (Flask Application)**
+
+1 Navigate to Server direcory (Flask project) using command cd server.
+
+```bash
+  cd server
+```
+
+2 Type pip install -r requirements.txt to install dependencies.
+
+```bash
+  pip install -r requirements.txt
+```
+3 Type python server.py to run server
+
+```bash
+  python server.py
+```
+
+#### **6.1.2 Run Client (ReactJS Application)**
+
+1 Navigate to Client direcory (ReactJS project) using command cd client.
+
+```bash
+  cd client
+```
+
+2 Type npm install --force to install dependencies.
+
+```bash
+  npm install --force
+```
+3 Type npm start to run client.
+
+```bash
+  npm start
+```
 
 ---
-## **7. API Documentation**  
-
----
-## **8. Tests**  
+## **7. Tests**  
 
 1. Navigate to project src folder entering command cd UnitConverter/server.
 
@@ -192,13 +241,13 @@ The system follows a **three-tier architecture**:
 ![tests](assets/images/tests.png)
 
 ---
-## **9. License**  
+## **8. License**  
 
 [LICENSE](/LICENSE)
 
 ---
 
-## **10. References**
+## **9. References**
 
 * FreeCodeCamp : [Frontend Web Development: In-Depth Project Tutorial (HTML, CSS, JavaScript, TypeScript, React)](https://www.youtube.com/watch?v=MsnQ5uepIa).
 * Dipesh Malvia : [Learn Node.js & Express with Project in 2 Hours](https://www.youtube.com/watch?v=H9M02of22z4&t=140s).
