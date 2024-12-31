@@ -15,10 +15,22 @@ from constants import port, host
 from apscheduler.schedulers.background import BackgroundScheduler
 from database.init import *
 from database.functions.resetDailySpanJob import job
+from apscheduler.triggers.cron import CronTrigger
+
 
 CORS(app)
 scheduler = BackgroundScheduler()
-scheduler.add_job(job, 'interval', seconds=100)
+
+'''
+trigger = CronTrigger(
+      year="*", month="*", day="*", hour="12", minute="", second="10"
+   )
+#scheduler.add_job(job, 'interval', seconds=100)
+'''
+#run database cleanup job at midnight
+trigger = CronTrigger(hour=0, minute=0)
+scheduler.add_job(job, trigger=trigger)
+
 
 @app.route('/')
 def server():
