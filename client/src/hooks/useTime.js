@@ -2,12 +2,12 @@ import { useContext } from 'react';
 import { Context as ServiceContext } from '../context/APIContext';
 
 function useTime() {
-  const {state,  secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction,
+  const {secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction,
         secondsToYearsAction, daysToSecondsAction, minutesToSecondsAction,
         hoursToSecondsAction, yearsToSecondsAction
 } = useContext(ServiceContext)
 
-   return [state,  secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction,
+   return [secondsToMinutesAction, secondsToDaysAction, secondsToHoursAction,
             secondsToYearsAction, daysToSecondsAction, minutesToSecondsAction,
             hoursToSecondsAction, yearsToSecondsAction
 ];

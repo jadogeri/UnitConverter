@@ -7,11 +7,10 @@ import Spacer from '../components/Spacer'
 
 const Cooking = () => {
 const [teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
-      cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
-      ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
+  cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
+  ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction
   
 ] = useCooking();
-
   return (
     <>
     <Spacer marginTop={40} marginBottom={40}/>
@@ -22,11 +21,12 @@ const [teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
     <div style={{   margin:45,   backgroundColor:"#484464"}}>
     <h3 style={{alignSelf:"center",display:"flex",justifyContent:"center",color:"white"}}>COOKING</h3>
 <div style={{   margin:45,  backgroundColor:"green"}}>
+  
 <CollapsibleOneInput title="Convert Tablespoons to Teaspoons" id="cooking1"
                   conversionText={CONVERSION_TYPES.COOKING.TABLESPOONS_TO_TEASPOONS}
                   handler={tablespoonsToTeaspoonsAction} service="cooking"
 />
-<CollapsibleOneInput title="Convert Teaspoons to Tablespoons" id="cooking2"
+<CollapsibleOneInput title="Convert Teaspoons to Tablespoons" id="cooking15"
                   conversionText={CONVERSION_TYPES.COOKING.TEASPOONS_TO_TABLESPOONS}
                   handler={teaspoonsToTablespoonsAction} service="cooking"
 />

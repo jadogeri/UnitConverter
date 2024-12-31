@@ -4,7 +4,7 @@ import { useFetchRecordsQuery } from '../redux/api/record.js'
 import Loader from './Loader.jsx'
 
 const ServiceTable = () => {
-  const { data, isLoading,isSuccess} = useFetchRecordsQuery()
+  const { data, isLoading,isFetching,isSuccess} = useFetchRecordsQuery()
   const [delay , setDelay] = useState(true);
 
   const [dailyspanData, setDailyspanData] = useState([])
@@ -58,7 +58,7 @@ const ServiceTable = () => {
           </div>
       </div>
       <div class="w3-row-padding">
-      {   !isSuccess ?<Loader strokeColor="grey" strokeWidth="5" width="96"/>:    <>  
+      {   isFetching ?<Loader strokeColor="grey" strokeWidth="5" width="96"/>:    <>  
                        <ServiceBoard data={lifespanData} title="LIFESPAN" key={getRandomInt()}/>
                        <ServiceBoard data={dailyspanData} title="DAILYSPAN" key={getRandomInt()}/>
                     </>     }

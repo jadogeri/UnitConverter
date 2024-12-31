@@ -2,11 +2,11 @@ import { useContext } from 'react';
 import { Context as ServiceContext } from '../context/APIContext';
 
 function useCooking() {
-  const {state,teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
+  const {teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
     cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
     ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction } = useContext(ServiceContext)
 
-   return [state,teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
+   return [teaspoonsToTablespoonsAction, tablespoonsToTeaspoonsAction,
     cupsToPintsAction,  pintsToCupsAction, cupsToOuncesAction,
     ouncesToCupsAction, cupsToTablespoonsAction, tablespoonsToCupsAction];
 }
