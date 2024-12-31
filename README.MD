@@ -7,7 +7,7 @@
 ---
 
 ## Description
-This is a REST API ,which stores user seesion in an embedded database (lowdb)
+This is a FullStack Application (ReactJS + Flask) ,which calculates and converts measurements while storing user api calls history.
 
 
 ## Authors
