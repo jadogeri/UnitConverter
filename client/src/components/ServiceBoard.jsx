@@ -28,8 +28,6 @@ const ServiceBoard = (props) => {
           })
         }
 
-
-
         </ul>
         <div className="w3-container w3-indigo w3-large"><span className="w3-right"></span></div>
       </div>

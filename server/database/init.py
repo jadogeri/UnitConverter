@@ -26,6 +26,3 @@ insertRecords();
 fetchRecords();
 
 ''' update data from tables'''
-
-updateRecord("time");
-print(fetchRecords());

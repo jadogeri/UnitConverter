@@ -1,12 +1,10 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import ServiceBoard from './ServiceBoard.jsx'
-import { Context as ServiceContext } from '../context/APIContext.js'
 import { useFetchRecordsQuery } from '../redux/api/record.js'
 import Loader from './Loader.jsx'
 
 const ServiceTable = () => {
-  const {  state } = useContext(ServiceContext)
-  const { data, isLoading,isSuccess } = useFetchRecordsQuery()
+  const { data, isLoading,isSuccess} = useFetchRecordsQuery()
   const [delay , setDelay] = useState(true);
 
   const [dailyspanData, setDailyspanData] = useState([])
@@ -15,8 +13,8 @@ const ServiceTable = () => {
     handleLoadRecords()
     setTimeout(()=>{
       setDelay(false)
-    },3000)
-    
+    },10000)
+      
   },[data])
 
   const handleLoadRecords = ()=>{
@@ -24,10 +22,9 @@ const ServiceTable = () => {
     try{
       if(isSuccess){
         console.log(data)
- 
+    
         data.data.map((item)=>{
           const {d_name,d_total,l_name,l_total} = item
-          //prevArray => [...prevArray, newObject
           setDailyspanData(prevArray => [...prevArray, {name : d_name,total : d_total}]);
           setLifespanData(prevArray => [...prevArray, {name : l_name,total : l_total}]);
         })
@@ -61,11 +58,10 @@ const ServiceTable = () => {
           </div>
       </div>
       <div class="w3-row-padding">
-      {   delay && <Loader/>}
-      {   !delay && (        <>  
+      {   !isSuccess ?<Loader strokeColor="grey" strokeWidth="5" width="96"/>:    <>  
                        <ServiceBoard data={lifespanData} title="LIFESPAN" key={getRandomInt()}/>
                        <ServiceBoard data={dailyspanData} title="DAILYSPAN" key={getRandomInt()}/>
-                    </>     )}
+                    </>     }
 
       
 
