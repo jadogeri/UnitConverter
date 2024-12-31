@@ -249,9 +249,9 @@ The system follows a **three-tier architecture**:
 
 ## **9. References**
 
-* FreeCodeCamp : [Frontend Web Development: In-Depth Project Tutorial (HTML, CSS, JavaScript, TypeScript, React)](https://www.youtube.com/watch?v=MsnQ5uepIa).
+* FreeCodeCamp : [Frontend Web Development: (HTML, CSS, JavaScript, TypeScript, React)](https://www.youtube.com/watch?v=MsnQ5uepIa).
 * Dipesh Malvia : [Learn Node.js & Express with Project in 2 Hours](https://www.youtube.com/watch?v=H9M02of22z4&t=140s).
-* HuXn WebDev : [Mastering Redux Toolkit and RTK Query: A Comprehensive Course for State Management & Data Fetching](https://www.youtube.com/watch?v=CI8VeG0GI-M&t=186s).
-* An Insightful Techie : [Unit Testing in Python using unittest framework - Basic Introduction and How to Write Tests](https://www.youtube.com/watch?v=HKTyOUx9Wf4&t=363s).
+* HuXn WebDev : [Mastering Redux Toolkit and RTK Query](https://www.youtube.com/watch?v=CI8VeG0GI-M&t=186s).
+* An Insightful Techie : [- Basic Introduction to Unit Testing in Python using unittest framework](https://www.youtube.com/watch?v=HKTyOUx9Wf4&t=363s).
 * Caleb Curry : [Python Programming 53 - Sys.path and Changing Module Paths](https://www.youtube.com/watch?v=5z5nALNandM).
 * FreeCodeCamp : [Learn Python - Full Course for Beginners [Tutorial]](https://www.youtube.com/watch?v=rfscVS0vtbw).
