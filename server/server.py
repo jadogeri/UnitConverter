@@ -25,11 +25,12 @@ scheduler = BackgroundScheduler()
 trigger = CronTrigger(
       year="*", month="*", day="*", hour="12", minute="", second="10"
    )
-#scheduler.add_job(job, 'interval', seconds=100)
-'''
-#run database cleanup job at midnight
 trigger = CronTrigger(hour=0, minute=0)
 scheduler.add_job(job, trigger=trigger)
+#scheduler.add_job(job, 'interval', seconds=100)
+'''
+scheduler.add_job(job, 'interval', seconds=60)
+
 
 
 @app.route('/')
