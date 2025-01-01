@@ -29,7 +29,7 @@ trigger = CronTrigger(hour=0, minute=0)
 scheduler.add_job(job, trigger=trigger)
 #scheduler.add_job(job, 'interval', seconds=100)
 '''
-scheduler.add_job(job, 'interval', seconds=60)
+scheduler.add_job(job, 'interval', seconds=86400)
 
 
 
