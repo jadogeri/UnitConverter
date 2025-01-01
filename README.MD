@@ -7,7 +7,7 @@
 ---
 
 ## Description
-This is a FullStack Application (ReactJS + Flask) ,which calculates and converts measurements while storing user api calls history.
+This is a FullStack Application (ReactJS + Flask) which calculates and converts measurements while storing user api calls history.
 
 
 ## Authors
